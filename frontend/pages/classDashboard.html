@@ -1,22 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class Dashboard Page</title>
-    <link rel="shortcut icon" href="../images/logo.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/classDashboard.css">
-</head>
-<body>
-    <nav></nav>
+    <link rel="shortcut icon" href="../images/logo.jpeg" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/classDashboard.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <h1 id="logo">
+        <img src="../images/navLogo.png" alt="" />
+      </h1>
+      <h1 id="tags">
+        <a href="">HOME</a>
+        <a href="">GYMS</a><a href="">TRAINERS</a><a href="">CLASSES</a>
+      </h1>
+      <h1 id="info">
+        <p id="location"><ion-icon name="location-outline"></ion-icon><span>INDIA</span></p>
+        <p id="notifications"><ion-icon name="notifications-outline"></ion-icon><span>0</span></p>
+        <p id="user"><ion-icon name="person-outline"></ion-icon><span>Login</span></p>
+      </h1>
+    </nav>
     <main>
-        <section>
-            <article></article>
-            <button>Add new class</button>
-        </section>
-        <aside></aside>
+      <section>
+        <h1>Classes</h1>
+        <article>
+          <div id="class">
+            <div id="images">
+              <img src="../images/yoga.jpg" alt="">
+            </div>
+            <div id="details">
+              <h1>HIIT Circuit Training</h1>
+              <h3>John Davis</h3>
+              <p> July 20, 2023</p>
+              <p>6:00 PM - 7:00 PM</p>
+              <p>price </p>
+            </div>
+            <div id="edit">
+              <p class="public">Public</p>
+              <p id="slot">32 slot <br> left</p>
+              <button>Edit Class</button>
+              <button>Delete Class</button>
+            </div>
+          </div><div id="class">
+            <div id="images">
+              <img src="../images/yoga.jpg" alt="">
+            </div>
+            <div id="details">
+              <h1>HIIT Circuit Training</h1>
+              <h3>John Davis</h3>
+              <p> July 20, 2023</p>
+              <p>6:00 PM - 7:00 PM</p>
+              <p>price </p>
+            </div>
+            <div id="edit">
+              <p class="public">Public</p>
+              <p id="slot">32 slot <br> left</p>
+              <button>Edit Class</button>
+              <button>Delete Class</button>
+            </div>
+          </div><div id="class">
+            <div id="images">
+              <img src="../images/yoga.jpg" alt="">
+            </div>
+            <div id="details">
+              <h1>HIIT Circuit Training</h1>
+              <h3>John Davis</h3>
+              <p> July 20, 2023</p>
+              <p>6:00 PM - 7:00 PM</p>
+              <p>price </p>
+            </div>
+            <div id="edit">
+              <p class="public">Public</p>
+              <p id="slot">32 slot <br> left</p>
+              <button>Edit Class</button>
+              <button>Delete Class</button>
+            </div>
+          </div><div id="class">
+            <div id="images">
+              <img src="../images/yoga.jpg" alt="">
+            </div>
+            <div id="details">
+              <h1>HIIT Circuit Training</h1>
+              <h3>John Davis</h3>
+              <p> July 20, 2023</p>
+              <p>6:00 PM - 7:00 PM</p>
+              <p>price </p>
+            </div>
+            <div id="edit">
+              <p class="public">Public</p>
+              <p id="slot">32 slot <br> left</p>
+              <button>Edit Class</button>
+              <button>Delete Class</button>
+            </div>
+          </div>
+        </article>
+        <button id="addClass">Add new class</button>
+      </section>
+      <aside>
+        <h1>Total Classes :-<span>0</span></h1>
+      </aside>
     </main>
     <footer></footer>
-</body>
+  </body>
 </html>
 <script src="../scripts/classDashboard.js"></script>
