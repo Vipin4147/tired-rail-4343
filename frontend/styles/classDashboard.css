@@ -4,7 +4,10 @@
 body{
     margin: 0px;
     padding: 0px;
+    /* background-color: #74BDE0; */
     background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Open Sans', sans-serif;
     backdrop-filter: blur(5px);
     color: #000;
@@ -18,7 +21,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    /* background-color: #A1E1FA; */
     backdrop-filter: blur(25px);
     position: sticky;
     top: 0px;
@@ -53,6 +56,7 @@ main{
     margin: 30px;
     display: flex;
     justify-content: space-between;
+    /* background-color: #6BBD99; */
 }
 section{
     width: 60%;
@@ -62,15 +66,15 @@ article{
     max-height: 70vh;
     overflow-y: scroll;
 }
-article::-webkit-scrollbar{
+::-webkit-scrollbar{
     display: none;
     width: 0px;
     background-color: #ffffff;
 }
-article:hover::-webkit-scrollbar{
+:hover::-webkit-scrollbar{
     display: block;
 }
-article::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
     background-color: #000000;
     border-radius: 10px;
 }
@@ -150,4 +154,33 @@ article::-webkit-scrollbar-thumb{
 aside{
     width: 30%;
     border: 1px solid red;
+}
+
+footer{
+    backdrop-filter: blur(25px);
+    display: flex;justify-content: space-evenly;
+    background-color: #eeeeee3d;
+    margin: 30px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+footer h3{
+    font-size: 25px;
+}
+footer ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+footer li{
+    margin-bottom: 10px;
+    font-size: 17px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    cursor: pointer;
+}
+footer ion-icon{
+    width: 50px;
+    height: 50px;
+    margin: 50px 10px 0px 0;
+    cursor: pointer;
 }
