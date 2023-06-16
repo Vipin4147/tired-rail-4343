@@ -62,6 +62,7 @@ section{
     width: 60%;
 }
 article{
+    height: 70vh;
     overflow: auto;
     max-height: 70vh;
     overflow-y: scroll;
@@ -86,10 +87,12 @@ article{
     margin-bottom: 10px;
 }
 #images{
-    width: 30%;
+    width: 35%;
 }
 #images>img{
-    width: 59%;
+    /* width: 59%; */
+    height: 22vh;
+    width: 100%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -139,7 +142,8 @@ article{
     background-color: transparent;
 }
 #edit>button:nth-child(4){
-    background-color: rgba(255, 0, 0, 0.637);
+    background-color: rgba(255, 0, 0, 0.842);
+    color: white;
 }
 
 #addClass{
@@ -157,12 +161,12 @@ aside{
 }
 
 footer{
-    backdrop-filter: blur(25px);
     display: flex;justify-content: space-evenly;
-    background-color: #eeeeee3d;
+    background-color: #eeeeee4f;
     margin: 30px;
     margin-bottom: 0px;
     border-radius: 10px;
+    backdrop-filter: blur(25px);
 }
 footer h3{
     font-size: 25px;
@@ -183,4 +187,81 @@ footer ion-icon{
     height: 50px;
     margin: 50px 10px 0px 0;
     cursor: pointer;
+}
+
+.popup{
+    position: absolute;
+    background-color: #fcfcfc;
+    height: 81vh;
+    width: 60%;
+    border-radius: 10px ;
+    text-align: center;
+    display: flex;
+ 
+    top: 0;
+    overflow-y: hidden;
+    left: 31%;
+    transform: translate(-50% , -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+ }
+ .openpopup{
+    visibility: visible;
+    top: 41.5%;
+    transform: translate(-50% , -50%) scale(1);
+ }
+ #cancel{
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgb(228, 228, 228);
+    cursor: pointer;
+ }
+
+ #popup>div{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+ }
+ #popup>div input,select{
+    width: 100%;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #293b52;
+    outline: none;
+    background: transparent;
+    height: 30px;
+    font-size: 16px;
+ }
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+ #popup>div input::placeholder{
+     color: #000000;
+     opacity: 0;
+ }
+ #popup>div input:focus::placeholder{
+     opacity: 0;
+ }
+ #popup>div label{
+    text-align: left;
+    position: relative;
+    top: 10px;
+    font-size: 13px;
+ }
+#add{
+    height: 30px;
+}
+div input[type=date]{
+    width: 50%;
+}
+.flex{
+    display: flex;
+    width: 100%;
 }
