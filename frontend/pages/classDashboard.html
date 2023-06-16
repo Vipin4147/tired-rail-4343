@@ -18,17 +18,27 @@
   <body>
     <nav>
       <h1 id="logo">
-        <img src="../images/navLogo.png" alt=""  onclick="window.location.href='../index.html'"/>
+        <img
+          src="../images/navLogo.png"
+          alt=""
+          onclick="window.location.href='../index.html'"
+        />
       </h1>
       <h1 id="tags">
         <a href="../index.html">HOME</a>
         <a href="">ABOUT</a>
-        <a href="">GYMS</a><a href="">TRAINERS</a><a href="">CLASSES</a>
+        <a href="">GYMS</a><a href="">TRAINERS</a><a href="./class.html">CLASSES</a>
       </h1>
       <h1 id="info">
-        <p id="location"><ion-icon name="location-outline"></ion-icon><span>INDIA</span></p>
-        <p id="notifications"><ion-icon name="notifications-outline"></ion-icon><span>0</span></p>
-        <p id="user"><ion-icon name="person-outline"></ion-icon><span>Login</span></p>
+        <p id="location">
+          <ion-icon name="location-outline"></ion-icon><span>INDIA</span>
+        </p>
+        <p id="notifications">
+          <ion-icon name="notifications-outline"></ion-icon><span>0</span>
+        </p>
+        <p id="user">
+          <ion-icon name="person-outline"></ion-icon><span>Login</span>
+        </p>
       </h1>
     </nav>
     <main>
@@ -37,78 +47,94 @@
         <article>
           <div id="class">
             <div id="images">
-              <img src="../images/yoga.jpg" alt="">
+              <img src="../images/yoga.jpg" alt="" />
             </div>
             <div id="details">
               <h1>HIIT Circuit Training</h1>
               <h3>John Davis</h3>
-              <p> July 20, 2023</p>
+              <p>July 20, 2023</p>
               <p>6:00 PM - 7:00 PM</p>
-              <p>price </p>
+              <p>price</p>
             </div>
             <div id="edit">
               <p class="public">Public</p>
-              <p id="slot">32 slot <br> left</p>
+              <p id="slot">
+                32 slot <br />
+                left
+              </p>
               <button>Edit Class</button>
               <button>Delete Class</button>
             </div>
-          </div><div id="class">
+          </div>
+          <div id="class">
             <div id="images">
-              <img src="../images/yoga.jpg" alt="">
+              <img src="../images/yoga.jpg" alt="" />
             </div>
             <div id="details">
-              <h1>HIIT Circuit Training</h1>
+              <h1>CrossFit Total Body Workout</h1>
               <h3>John Davis</h3>
-              <p> July 20, 2023</p>
+              <p>July 20, 2023</p>
               <p>6:00 PM - 7:00 PM</p>
-              <p>price </p>
+              <p>price</p>
             </div>
             <div id="edit">
               <p class="public">Public</p>
-              <p id="slot">32 slot <br> left</p>
+              <p id="slot">
+                32 slot <br />
+                left
+              </p>
               <button>Edit Class</button>
               <button>Delete Class</button>
             </div>
-          </div><div id="class">
+          </div>
+          <div id="class">
             <div id="images">
-              <img src="../images/yoga.jpg" alt="">
+              <img src="../images/yoga.jpg" alt="" />
             </div>
             <div id="details">
-              <h1>HIIT Circuit Training</h1>
+              <h1>Barre Sculpt</h1>
               <h3>John Davis</h3>
-              <p> July 20, 2023</p>
+              <p>July 20, 2023</p>
               <p>6:00 PM - 7:00 PM</p>
-              <p>price </p>
+              <p>price</p>
             </div>
             <div id="edit">
               <p class="public">Public</p>
-              <p id="slot">32 slot <br> left</p>
+              <p id="slot">
+                32 slot <br />
+                left
+              </p>
               <button>Edit Class</button>
               <button>Delete Class</button>
             </div>
-          </div><div id="class">
+          </div>
+          <div id="class">
             <div id="images">
-              <img src="../images/yoga.jpg" alt="">
+              <img src="../images/yoga.jpg" alt="" />
             </div>
             <div id="details">
-              <h1>HIIT Circuit Training</h1>
+              <h1>Pilates Mat</h1>
               <h3>John Davis</h3>
-              <p> July 20, 2023</p>
+              <p>July 20, 2023</p>
               <p>6:00 PM - 7:00 PM</p>
-              <p>price </p>
+              <p>price</p>
             </div>
             <div id="edit">
               <p class="public">Public</p>
-              <p id="slot">32 slot <br> left</p>
+              <p id="slot">
+                32 slot <br />
+                left
+              </p>
               <button>Edit Class</button>
               <button>Delete Class</button>
             </div>
           </div>
         </article>
-        <button id="addClass">Add new class</button>
+        <button id="addClass" onclick="displayForm()">Add new class</button>
       </section>
+      <div id="popup" class="popup"></div>
       <aside>
-        <h1>Total Classes :-<span>0</span></h1>
+        <h1>Total Classes :-<span id="total">0</span></h1>
       </aside>
     </main>
     <footer>
@@ -157,9 +183,8 @@
           <li>Class Dashboard</li>
           <li></li>
           <li>Admin</li>
-            <li>© ALL RIGHTS RESERVED</li>
+          <li>© ALL RIGHTS RESERVED</li>
         </ul>
-        
       </div>
     </footer>
   </body>
