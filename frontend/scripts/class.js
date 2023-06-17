@@ -1,5 +1,6 @@
 const city = document.querySelector("#location>span");
 const main = document.querySelector("article");
+var allClasses = []
 // getLocation();
 function getLocation() {
   if (navigator.geolocation) {
@@ -65,8 +66,31 @@ function searchToggle(obj, evt) {
 }
 
 let search = document.querySelector(".search-input");
-search.addEventListener("change", () => {
-  console.log("adlfjk");
+search.addEventListener("change", (e) => {
+  main.innerHTML = `<div class="lds-roller">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>`;
+  let name=e.target.value;
+  fetch(`http://localhost:3030/class/trainerName?n=${name}`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    if(data.length > 0) {
+      displayClasses(data)
+    }else{
+      displayError()
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 });
 
 getAllClasses();
@@ -75,6 +99,7 @@ function getAllClasses() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data[0]);
+      allClasses = data
       displayClasses(data);
     })
     .catch((error) => {
@@ -104,3 +129,80 @@ function displayClasses(data) {
   });
   main.innerHTML = html;
 }
+
+function displayError(){
+  main.innerHTML = `<h1 id="error">No <br>Class <br>Available</h1>`
+}
+
+let filters = {}
+document.querySelectorAll("input[type=checkbox]").forEach((checkbox)=>{
+    checkbox.addEventListener("change", (e)=>{
+        filters[checkbox.name] = checkbox.checked
+        main.innerHTML =`
+        <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+        `
+        applyFilters()
+    })
+})
+
+function applyFilters(){
+  console.log(filters)
+  let flag = false
+  for(let key in filters){
+    if(filters[key]){
+      flag = true
+    }
+  }
+  if(flag){
+    let filterClasses = allClasses.filter((cls)=>{
+      for(let key in filters){
+        if(filters[key] && cls.classStatus == key){
+          return cls
+        }
+      }
+    })
+    console.log(filterClasses)
+    displayClasses(filterClasses)
+  }else{
+    displayClasses(allClasses)
+  }
+}
+
+let sort = document.getElementById("sort")
+
+sort.addEventListener("change", (e)=>{
+    let value = sort.value;
+    let data = [...allClasses]
+    if(value==""){
+      displayClasses(allClasses)
+    }else
+    if(value == "asc"){
+        data.sort((a,b)=>{
+            return a.classFee - b.classFee
+        })
+        displayClasses(data)
+    }else
+    if(value == "desc"){
+        data.sort((a,b)=>{
+            return b.classFee - a.classFee
+        })
+        displayClasses(data)
+    }else
+    if(value == "review"){
+        
+        for (let i = data.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [data[i], data[j]] = [data[j], data[i]];
+        }
+        displayClasses(data)
+    }
+})
