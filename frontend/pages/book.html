@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Class</title>
+    <link rel="shortcut icon" href="../images/logo.jpeg" type="image/x-icon" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../styles/book.css" />
+  </head>
+  <body>
+    <nav>
+      <h1 id="logo">
+        <img
+          src="../images/navLogo.png"
+          alt=""
+          onclick="window.location.href='../index.html'"
+        />
+      </h1>
+      <h1 id="tags">
+        <a href="../index.html">HOME</a>
+        <a href="">ABOUT</a>
+        <a href="">GYMS</a><a href="">TRAINERS</a
+        ><a href="./class.html">CLASSES</a>
+      </h1>
+      <h1 id="info">
+        <p id="location">
+          <ion-icon name="location-outline"></ion-icon><span>INDIA</span>
+        </p>
+        <p id="notifications">
+          <ion-icon name="notifications-outline"></ion-icon><span>0</span>
+        </p>
+        <p id="user">
+          <ion-icon name="person-outline"></ion-icon><span>Login</span>
+        </p>
+      </h1>
+    </nav>
+    <main>
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="left">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_d0w2vx4mFGJ2PrvjvpCV3Nte04jaFsbRSA&usqp=CAU" alt="">
+            <div>
+              <h1>Yoga</h1>
+            <h3>By Kira</h3>
+            </div>
+        </div>
+        <p><span>Time:</span> 6:00 AM 18-06-2023</p>
+        <p><span>Important Note:</span>
+            Come and join us on a journey of self-discovery and holistic wellness. Reserve your spot in our yoga class today and experience the transformative power of yoga.</p>
+      </div>
+      <div id="right">
+        <div>
+            <h1>Total Fee : 1000</h1>
+            <input type="text" placeholder="Enter Code" id="codeInput"><button id="code">Check</button>
+            <br>
+            <span></span>
+        </div>
+        <div id="payment">
+          <h3>Payment Methods</h3>
+          <div>
+            <span>Gift Card</span>
+            <span>
+              <input type="checkbox" name="paymentMethod" id="giftCard">
+              <label for="giftCard"></label>
+            </span>
+          </div>
+          <div>
+            <span>Pay with Debit/Credit/ATM Cards</span>
+            <span><input type="checkbox" name="paymentMethod" id="card">
+              <label for="card"></label></span>
+          </div>
+          <div>
+            <span>Net Banking</span>
+            <span><input type="checkbox" name="paymentMethod" id="net">
+              <label for="net"></label></span>
+          </div>
+          <div>
+            <span>UPI Apps</span>
+            <span><input type="checkbox" name="paymentMethod" id="upi">
+              <label for="upi"></label></span>
+          </div>
+          <div>
+            <span>Offline</span>
+            <span><input type="checkbox" name="paymentMethod" id="offline">
+              <label for="offline"></label></span>
+          </div>
+        </div>
+        <div>
+          <p><input type="checkbox" name="agree" value="yes" checked><label for="agree"></label> <span>I agree to the <a>terms</a> and <a>conditions</a></span></p>
+          <button>Proceed</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <h3>Let Us Help You</h3>
+        <ul>
+          <li>COVID-19 and FitIndia</li>
+          <li>Your Account</li>
+          <li>Report Center</li>
+          <li>100% Purchase Protection</li>
+          <li>FitIndia App Download</li>
+          <li>Help</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Make Money with Us</h3>
+        <ul>
+          <li>Start on FitIndia</li>
+          <li>Start under FitIndia Accelerator</li>
+          <li>Become an Affiliate</li>
+          <li>Fulfilment by FitIndia</li>
+          <li>Advertise Your Products</li>
+          <li>Help On Start with Us</li>
+        </ul>
+      </div>
+      <div>
+        <h3>About Us</h3>
+        <ul>
+          <li>FAQ</li>
+          <li>Our Investors</li>
+          <li>Newsroom</li>
+          <li>Careers</li>
+          <li>Blogs</li>
+          <li>Developers</li>
+        </ul>
+      </div>
+      <div>
+        <div>
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </div>
+        <ul>
+          <li>Gym Dashboard</li>
+          <li>Trainer Dashboard</li>
+          <li onclick="window.location.href='./classDashboard.html'">
+            Class Dashboard
+          </li>
+          <li></li>
+          <li>Admin</li>
+          <li>© ALL RIGHTS RESERVED</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="../scripts/book.js"></script>

@@ -115,15 +115,21 @@ function displayClasses(data) {
     if (className.length > maxLength) {
       className = className.substring(0, maxLength) + "...";
     }
+    let note=`${cls.classNote}`
+    maxLength = 50
+    if (note.length > maxLength) {
+      note = note.substring(0, maxLength) + "...";
+    }
     html += `
     <div id="class">
                 <img src="${cls.imageUrl}" alt="${cls.className}">
                 <h3>${className}</h3>
                 <p>${cls.trainerName}</p>
+                <p>${note}</p>
                 <p>${cls.classTime} ${cls.classDate}</p>
                 <p>Fee ${cls.classFee}</p>
-                <button>Book Now</button>
-                <button>View Details</button>
+                <button onclick="bookNow(${cls._id})">Book Now</button>
+                <button onclick="viewDetails('${cls._id}')">View Details</button>
               </div>
             `;
   });
@@ -206,3 +212,8 @@ sort.addEventListener("change", (e)=>{
         displayClasses(data)
     }
 })
+
+function viewDetails(id){
+  let url = "../pages/classPage.html?id=" + id
+  window.open(url)
+}
