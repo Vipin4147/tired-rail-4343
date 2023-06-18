@@ -22,7 +22,7 @@ app.get("/",(req,res)=>{
   app.get("/login", (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
-//============================send-mail=====================================
+//============================send-mail========================================================
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
