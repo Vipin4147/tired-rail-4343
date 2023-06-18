@@ -24,40 +24,40 @@ app.get("/",(req,res)=>{
 })
 //============================send-mail=====================================
 
-// const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: "guptamanshi606@gmail.com",
-//       pass: "pecdubvwywqpctqk",
-//     },
-//   });
-//   let loggerTouse = (req, res, next) => {
-//     logger.log("info", `A ${req.method} request is made on url:${req.url}`);
-//     if (req.method != "GET") {
-//       let email = req.body.email || req.user.email || manshi;
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "guptamanshi606@gmail.com",
+      pass: "pecdubvwywqpctqk",
+    },
+  });
+  let loggerTouse = (req, res, next) => {
+    logger.log("info", `A ${req.method} request is made on url:${req.url}`);
+    if (req.method != "GET") {
+      let email = req.body.email || req.user.email || manshi;
   
-//       let mailOptions = {
-//         from: "guptamanshi606@gmail.com",
-//         to:"manshisbp@gmail.com" ,
-//         subject: "Email from fitindia",
-//         text: "welcome to manshigupta from manshu sucessfully login"
-//         // text: "info" + " " + `A ${req.method} request is made on url:${req.url}`,
-//       };
-//       transporter.sendMail(mailOptions,(error,info ) => {
-//         if (error) {
-//           console.log(error);
+      let mailOptions = {
+        from: "guptamanshi606@gmail.com",
+        to:"manshisbp@gmail.com" ,
+        subject: "Email from fitindia",
+        text: "welcome to manshigupta from manshu sucessfully login"
+        // text: "info" + " " + `A ${req.method} request is made on url:${req.url}`,
+      };
+      transporter.sendMail(mailOptions,(error,info ) => {
+        if (error) {
+          console.log(error);
       
-//         } else {
-//           console.log("Email sent: "+info.response);
+        } else {
+          console.log("Email sent: "+info.response);
        
-//         }
-//       });
-//     }
-//     next();
-//   };
+        }
+      });
+    }
+    next();
+  };
 
 
-//   app.use(loggerTouse);
+  app.use(loggerTouse);
 
 
 //===================google==================================================================
@@ -72,13 +72,7 @@ app.get( '/auth/google/callback',
         function (req, res) {
             res.redirect("http://localhost:1111/index.page")  
 })
-
-
-
-
 // ***********************************************************************************
-
-
 app.listen(process.env.port,async()=>{
     try{
         await connection

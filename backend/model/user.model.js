@@ -2,7 +2,7 @@ const mongoose=require("mongoose")
 const userschema = mongoose.Schema({
     name:String,
     email:String,
-    phone:String,
+    // phone:String,
     password:String,
     resetToken:String,
     expireToken:{
