@@ -1,0 +1,57 @@
+.pt{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-image: url("../images/background.png");
+}
+a{
+  text-decoration:none;
+}
+.forget-password-section{
+ 
+  background-color: #f3f5f9;
+  height: 655px;
+}
+.forget-password-section .forget-password-form{
+
+  background: #fff;
+  padding: 2rem;
+  color:  #101111;
+
+  border-radius: 17px;
+
+}
+.forget-password-section .forget-password-form i{
+  text-align: center;
+  font-size: 45px;
+  display: block;
+  margin-bottom: 2rem;
+}
+.forget-password-section .forget-password-form input{
+  padding: 0.7rem;
+}
+.forget-password-section .forget-password-form h1{
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.forget-password-section .forget-password-form p{
+  text-align: center;
+}
+.forget-password-section .forget-password-form button{
+  width: 100%;
+  background-color:  #2191e8;
+  border: #0c0c0c;
+  color: #fff;
+  font-size: 21px;
+  margin-top: 1rem;
+}
+.forget-password-section .forget-password-form button:hover{
+  background-color: #2191e8;
+  color: #fdfdfd;
+  border: 1px solid #2191e8;
+}
+.forget-password-section .forget-password-form .back{
+  margin-top: 2rem;
+  font-weight: 600;
+  color: red;
+}
