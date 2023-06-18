@@ -125,10 +125,10 @@ function displayClasses(data) {
                 <img src="${cls.imageUrl}" alt="${cls.className}">
                 <h3>${className}</h3>
                 <p>${cls.trainerName}</p>
-                <p>${note}</p>
+                <p id="note">${note}</p>
                 <p>${cls.classTime} ${cls.classDate}</p>
                 <p>Fee ${cls.classFee}</p>
-                <button onclick="bookNow(${cls._id})">Book Now</button>
+                <button onclick="bookNow('${cls._id}')">Book Now</button>
                 <button onclick="viewDetails('${cls._id}')">View Details</button>
               </div>
             `;
@@ -215,5 +215,10 @@ sort.addEventListener("change", (e)=>{
 
 function viewDetails(id){
   let url = "../pages/classPage.html?id=" + id
+  window.open(url)
+}
+
+function bookNow(id){
+  let url = "../pages/book.html?id=" + id
   window.open(url)
 }

@@ -51,7 +51,7 @@ function getLocation() {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
+const id = urlParams.get("id") || 1
 if (id) {
   getClass(id)
 }else{

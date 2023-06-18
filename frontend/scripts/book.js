@@ -1,5 +1,5 @@
 const city = document.querySelector("#location>span");
-const main = document.querySelector("main");
+const left = document.querySelector("#left");
 let classFee = 1000
 let currOffer = '0%'
 var offers ={
@@ -61,12 +61,12 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 console.log(id)
 if(id){
-    // getClass(id)
+    getClass(id)
 }else{
     window.location.href = "../pages/class.html"
 }
-function getClass(id) {
-  fetch(`http://localhost:3030/class/classId/${id}`)
+async function getClass(id) {
+  await fetch(`http://localhost:3030/class/classId/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -80,29 +80,24 @@ function display(data) {
     classFee = data.classFee
   let html =''
   html += `
-    <div id="left">
-    <img src="${data.imageUrl}" alt="" id="displayImage">
+    <div>
+        <img src="${data.imageUrl}" alt="">
+        <div>
+          <h1>${data.className}</h1>
+        <h3>By ${data.trainerName}</h3>
+        </div>
     </div>
-    <div id="right">
-      <h1>${data.className}</h1>
-      <h3>By ${data.trainerName}</h3>
-      <p>Time: ${data.classTime} ${data.classDate}</p>
-      <p>Important Note: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>${data.classNote}</span></p>
-    </div>
+    <p>Time: ${data.classTime} ${data.classDate}</p>
+    <p><span>Important Note:</span>
+    ${data.classNote}</p>
   `
-//   main.innerHTML=html
+  document.querySelector("#right>div:nth-child(1)>h1").innerHTML=`Total Fee : ${classFee}`
+  left.innerHTML=html
 }
-  function hover(event) {
-    let imageUrl = event.src
-    document.getElementById('displayImage').src=imageUrl
-  }
 
-  function book(id){
-    window.location.href = `../images/book/${id}`
-  }
 
   const checkboxes = document.querySelectorAll('input[name="paymentMethod"]');
-
+  console.log(checkboxes)
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('change', (event) => {
     checkboxes.forEach((otherCheckbox) => {
@@ -112,6 +107,8 @@ checkboxes.forEach((checkbox) => {
     });
   });
 });
+
+
 
 
 let btn = document.querySelector("#code")
@@ -126,6 +123,12 @@ btn.addEventListener('click', (event) => {
     if(offer){
       event.target.textContent = "Apply offer"
       span.innerHTML = `Elegible for ${offer} off in this booking`
+      span.style.backgroundColor = '#30ff1d'
+      span.style.visibility = 'visible'
+    }else{
+      span.innerHTML = `Invalid offer code: ${code}`
+      span.style.backgroundColor = 'red'
+      span.style.visibility = 'visible'
     }
   }else{
     let off = currOffer.split("%")
@@ -134,4 +137,83 @@ btn.addEventListener('click', (event) => {
     console.log(classFee);
     document.querySelector("#right>div:nth-child(1)>h1").innerHTML=`Total Fee : ${classFee}`
   }
+})
+
+
+
+
+
+
+
+
+
+
+
+$('.input-cart-number').on('keyup change', function(){
+  $t = $(this);
+  
+  if ($t.val().length > 3) {
+    $t.next().focus();
+  }
+  
+  var card_number = '';
+  $('.input-cart-number').each(function(){
+    card_number += $(this).val() + ' ';
+    if ($(this).val().length == 4) {
+      $(this).next().focus();
+    }
+  })
+  
+  $('.credit-card-box .number').html(card_number);
+});
+
+$('#card-holder').on('keyup change', function(){
+  $t = $(this);
+  $('.credit-card-box .card-holder div').html($t.val());
+});
+
+$('#card-holder').on('keyup change', function(){
+  $t = $(this);
+  $('.credit-card-box .card-holder div').html($t.val());
+});
+
+$('#card-expiration-month, #card-expiration-year').change(function(){
+  m = $('#card-expiration-month option').index($('#card-expiration-month option:selected'));
+  m = (m < 10) ? '0' + m : m;
+  y = $('#card-expiration-year').val().substr(2,2);
+  $('.card-expiration-date div').html(m + '/' + y);
+})
+
+$('#card-ccv').on('focus', function(){
+  $('.credit-card-box').addClass('hover');
+}).on('blur', function(){
+  $('.credit-card-box').removeClass('hover');
+}).on('keyup change', function(){
+  $('.ccv div').html($(this).val());
+});
+
+
+/*--------------------
+CodePen Tile Preview
+--------------------*/
+setTimeout(function(){
+  $('#card-ccv').focus().delay(1000).queue(function(){
+    $(this).blur().dequeue();
+  });
+}, 500);
+
+
+
+let submitBtn = document.getElementById('submit');
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  let flag= true;
+  var result = confirm("Are you sure you want to proceed?");
+if (result && flag) {
+  alert("You have successfully booked your slot");
+  window.location.href = "../index.html"
+} else {
+  alert("Please enter all informations")
+}
+
 })
