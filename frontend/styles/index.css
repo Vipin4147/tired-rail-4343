@@ -145,13 +145,13 @@ footer ion-icon{
    #clas div{
    background-color: #423c38;
    margin-top: -130px;
-   opacity: 0.9;
+   /* opacity: 0.9; */
    }
 
    #try_us div{
     background-color: #423c38;
     margin-top: -130px;
-    opacity: 0.9;
+    /* opacity: 0.9; */
    }
 
    #clas:hover{
@@ -160,4 +160,53 @@ footer ion-icon{
    
    #try_us:hover{
 cursor: pointer;
+   }
+
+   #health{
+    width: 80%;
+   text-align: center;
+   margin: auto;
+   }
+
+   #health h2{
+    color: #ffff;
+   }
+
+   #health p{
+    color: #ffff;
+   }
+
+   #health button{
+    color: #ffff;
+    background-color: #d23d1b;
+    border: 0px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+   }
+
+   #health button:hover{
+    cursor: pointer;
+   }
+
+   #insta{
+    width: 80%;
+   text-align: center;
+   margin: auto;
+   }
+
+   #insta h2{
+    color: #ffff;
+   }
+
+   #insta p{
+    color: #ffff;
+   }
+
+   #insta span{
+    color: #d23d1b;
+   }
+
+   #insta span:hover{
+    cursor: pointer;
    }
