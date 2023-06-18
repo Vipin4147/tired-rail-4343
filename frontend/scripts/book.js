@@ -1,13 +1,13 @@
 const city = document.querySelector("#location>span");
 const left = document.querySelector("#left");
-let classFee = 1000
-let currOffer = '0%'
-var offers ={
-  "FIT50":"50%",
-  "MASAI20":"20%",
-  "GET10":"10%",
-}
-// getLocation();
+let classFee = 1000;
+let currOffer = "0%";
+var offers = {
+  FIT50: "50%",
+  MASAI20: "20%",
+  GET10: "10%",
+};
+getLocation();
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -59,26 +59,26 @@ function getLocation() {
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
-console.log(id)
-if(id){
-    getClass(id)
-}else{
-    window.location.href = "../pages/class.html"
+console.log(id);
+if (id) {
+  getClass(id);
+} else {
+  window.location.href = "../pages/class.html";
 }
 async function getClass(id) {
-  await fetch(`http://localhost:3030/class/classId/${id}`)
+  await fetch(`https://weak-teal-lemur-slip.cyclic.app/class/classId/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      display(data)
+      display(data);
     })
     .catch((error) => {
       console.log(error);
     });
 }
 function display(data) {
-    classFee = data.classFee
-  let html =''
+  classFee = data.classFee;
+  let html = "";
   html += `
     <div>
         <img src="${data.imageUrl}" alt="">
@@ -90,16 +90,17 @@ function display(data) {
     <p>Time: ${data.classTime} ${data.classDate}</p>
     <p><span>Important Note:</span>
     ${data.classNote}</p>
-  `
-  document.querySelector("#right>div:nth-child(1)>h1").innerHTML=`Total Fee : ${classFee}`
-  left.innerHTML=html
+  `;
+  document.querySelector(
+    "#right>div:nth-child(1)>h1"
+  ).innerHTML = `Total Fee : ${classFee}`;
+  left.innerHTML = html;
 }
 
-
-  const checkboxes = document.querySelectorAll('input[name="paymentMethod"]');
-  console.log(checkboxes)
+const checkboxes = document.querySelectorAll('input[name="paymentMethod"]');
+console.log(checkboxes);
 checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener('change', (event) => {
+  checkbox.addEventListener("change", (event) => {
     checkboxes.forEach((otherCheckbox) => {
       if (otherCheckbox !== event.target) {
         otherCheckbox.checked = false;
@@ -108,112 +109,106 @@ checkboxes.forEach((checkbox) => {
   });
 });
 
-
-
-
-let btn = document.querySelector("#code")
-btn.addEventListener('click', (event) => {
-  console.log(event.target.textContent)
-  let span = document.querySelector("#right>div:nth-child(1)>span")
-  if(event.target.textContent == 'Check'){
-    let code = document.querySelector('#codeInput').value
-    let offer = offers[code] 
-    currOffer = offer
+let btn = document.querySelector("#code");
+btn.addEventListener("click", (event) => {
+  console.log(event.target.textContent);
+  let span = document.querySelector("#right>div:nth-child(1)>span");
+  if (event.target.textContent == "Check") {
+    let code = document.querySelector("#codeInput").value;
+    let offer = offers[code];
+    currOffer = offer;
     console.log(offer);
-    if(offer){
-      event.target.textContent = "Apply offer"
-      span.innerHTML = `Elegible for ${offer} off in this booking`
-      span.style.backgroundColor = '#30ff1d'
-      span.style.visibility = 'visible'
-    }else{
-      span.innerHTML = `Invalid offer code: ${code}`
-      span.style.backgroundColor = 'red'
-      span.style.visibility = 'visible'
+    if (offer) {
+      event.target.textContent = "Apply offer";
+      span.innerHTML = `Elegible for ${offer} off in this booking`;
+      span.style.backgroundColor = "#30ff1d";
+      span.style.visibility = "visible";
+    } else {
+      span.innerHTML = `Invalid offer code: ${code}`;
+      span.style.backgroundColor = "red";
+      span.style.visibility = "visible";
     }
-  }else{
-    let off = currOffer.split("%")
-    console.log(off)
-    classFee=+classFee*(+off[0]/100)
+  } else {
+    event.target.textContent = "Offer Applied";
+    let off = currOffer.split("%");
+    console.log(off);
+    classFee = +classFee * (+off[0] / 100);
     console.log(classFee);
-    document.querySelector("#right>div:nth-child(1)>h1").innerHTML=`Total Fee : ${classFee}`
+    document.querySelector(
+      "#right>div:nth-child(1)>h1"
+    ).innerHTML = `Total Fee : ${classFee}`;
   }
-})
+});
 
-
-
-
-
-
-
-
-
-
-
-$('.input-cart-number').on('keyup change', function(){
+$(".input-cart-number").on("keyup change", function () {
   $t = $(this);
-  
+
   if ($t.val().length > 3) {
     $t.next().focus();
   }
-  
-  var card_number = '';
-  $('.input-cart-number').each(function(){
-    card_number += $(this).val() + ' ';
+
+  var card_number = "";
+  $(".input-cart-number").each(function () {
+    card_number += $(this).val() + " ";
     if ($(this).val().length == 4) {
       $(this).next().focus();
     }
+  });
+
+  $(".credit-card-box .number").html(card_number);
+});
+
+$("#card-holder").on("keyup change", function () {
+  $t = $(this);
+  $(".credit-card-box .card-holder div").html($t.val());
+});
+
+$("#card-holder").on("keyup change", function () {
+  $t = $(this);
+  $(".credit-card-box .card-holder div").html($t.val());
+});
+
+$("#card-expiration-month, #card-expiration-year").change(function () {
+  m = $("#card-expiration-month option").index(
+    $("#card-expiration-month option:selected")
+  );
+  m = m < 10 ? "0" + m : m;
+  y = $("#card-expiration-year").val().substr(2, 2);
+  $(".card-expiration-date div").html(m + "/" + y);
+});
+
+$("#card-ccv")
+  .on("focus", function () {
+    $(".credit-card-box").addClass("hover");
   })
-  
-  $('.credit-card-box .number').html(card_number);
-});
-
-$('#card-holder').on('keyup change', function(){
-  $t = $(this);
-  $('.credit-card-box .card-holder div').html($t.val());
-});
-
-$('#card-holder').on('keyup change', function(){
-  $t = $(this);
-  $('.credit-card-box .card-holder div').html($t.val());
-});
-
-$('#card-expiration-month, #card-expiration-year').change(function(){
-  m = $('#card-expiration-month option').index($('#card-expiration-month option:selected'));
-  m = (m < 10) ? '0' + m : m;
-  y = $('#card-expiration-year').val().substr(2,2);
-  $('.card-expiration-date div').html(m + '/' + y);
-})
-
-$('#card-ccv').on('focus', function(){
-  $('.credit-card-box').addClass('hover');
-}).on('blur', function(){
-  $('.credit-card-box').removeClass('hover');
-}).on('keyup change', function(){
-  $('.ccv div').html($(this).val());
-});
-
+  .on("blur", function () {
+    $(".credit-card-box").removeClass("hover");
+  })
+  .on("keyup change", function () {
+    $(".ccv div").html($(this).val());
+  });
 
 /*--------------------
 CodePen Tile Preview
 --------------------*/
-setTimeout(function(){
-  $('#card-ccv').focus().delay(1000).queue(function(){
-    $(this).blur().dequeue();
-  });
+setTimeout(function () {
+  $("#card-ccv")
+    .focus()
+    .delay(1000)
+    .queue(function () {
+      $(this).blur().dequeue();
+    });
 }, 500);
 
-
-
-let submitBtn = document.getElementById('submit');
-submitBtn.addEventListener('click', (e) => {
+let submitBtn = document.getElementById("submit");
+submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let flag= true;
+  let flag = true;
   var result = confirm("Are you sure you want to proceed?");
-if (result && flag) {
-  alert("You have successfully booked your slot");
-  window.location.href = "../index.html"
-} else {
-  alert("Please enter all informations")
-}
-
-})
+  if (result && flag) {
+    alert("You have successfully booked your slot");
+    window.location.href = "../index.html";
+  } else {
+    alert("Please enter all informations");
+  }
+});

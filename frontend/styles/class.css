@@ -415,7 +415,7 @@ article {
   left: 65%;
 }
 
-#error{
+#error {
   position: absolute;
   left: 52%;
   top: 30%;
@@ -423,6 +423,6 @@ article {
   font-size: 50px;
 }
 
-#note{
+#note {
   height: 60px;
 }

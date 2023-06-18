@@ -1,6 +1,6 @@
 const city = document.querySelector("#location>span");
 const main = document.querySelector("main");
-// getLocation();
+getLocation();
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -51,18 +51,18 @@ function getLocation() {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id") || 1
+const id = urlParams.get("id") || 1;
 if (id) {
-  getClass(id)
-}else{
-  window.location.href = "../pages/class.html"
+  getClass(id);
+} else {
+  window.location.href = "../pages/class.html";
 }
 function getClass(id) {
-  fetch(`http://localhost:3030/class/classId/${id}`)
+  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/classId/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      display(data)
+      display(data);
     })
     .catch((error) => {
       console.log(error);
@@ -70,8 +70,8 @@ function getClass(id) {
 }
 
 function display(data) {
-  document.title=`${data.className} | FitIndia`
-  let html =''
+  document.title = `${data.className} | FitIndia`;
+  let html = "";
   html += `
     <div id="left">
     <img src="${data.imageUrl}" alt="" id="displayImage">
@@ -91,16 +91,16 @@ function display(data) {
       <h3>Fee: ${data.classFee}</h3>
       <button  onclick="book('${data._id}')">Book Now</button>
     </div>
-  `
-  main.innerHTML=html
+  `;
+  main.innerHTML = html;
 }
-  function hover(event) {
-    let imageUrl = event.src
-    document.getElementById('displayImage').src=imageUrl
-  }
+function hover(event) {
+  let imageUrl = event.src;
+  document.getElementById("displayImage").src = imageUrl;
+}
 
-  function book(id){
-    // window.location.href = `../images/book/${id}`
-    let url = "../pages/book.html?id=" + id
-    window.location.href=url
-  }
+function book(id) {
+  // window.location.href = `../images/book/${id}`
+  let url = "../pages/book.html?id=" + id;
+  window.location.href = url;
+}

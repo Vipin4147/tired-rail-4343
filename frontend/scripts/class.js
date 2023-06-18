@@ -1,7 +1,7 @@
 const city = document.querySelector("#location>span");
 const main = document.querySelector("article");
-var allClasses = []
-// getLocation();
+var allClasses = [];
+getLocation();
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -77,29 +77,29 @@ search.addEventListener("change", (e) => {
   <div></div>
   <div></div>
 </div>`;
-  let name=e.target.value;
-  fetch(`http://localhost:3030/class/trainerName?n=${name}`)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    if(data.length > 0) {
-      displayClasses(data)
-    }else{
-      displayError()
-    }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+  let name = e.target.value;
+  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/trainerName?n=${name}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.length > 0) {
+        displayClasses(data);
+      } else {
+        displayError();
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
 getAllClasses();
 function getAllClasses() {
-  fetch(`http://localhost:3030/class/`)
+  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data[0]);
-      allClasses = data
+      allClasses = data;
       displayClasses(data);
     })
     .catch((error) => {
@@ -115,8 +115,8 @@ function displayClasses(data) {
     if (className.length > maxLength) {
       className = className.substring(0, maxLength) + "...";
     }
-    let note=`${cls.classNote}`
-    maxLength = 50
+    let note = `${cls.classNote}`;
+    maxLength = 50;
     if (note.length > maxLength) {
       note = note.substring(0, maxLength) + "...";
     }
@@ -136,15 +136,15 @@ function displayClasses(data) {
   main.innerHTML = html;
 }
 
-function displayError(){
-  main.innerHTML = `<h1 id="error">No <br>Class <br>Available</h1>`
+function displayError() {
+  main.innerHTML = `<h1 id="error">No <br>Class <br>Available</h1>`;
 }
 
-let filters = {}
-document.querySelectorAll("input[type=checkbox]").forEach((checkbox)=>{
-    checkbox.addEventListener("change", (e)=>{
-        filters[checkbox.name] = checkbox.checked
-        main.innerHTML =`
+let filters = {};
+document.querySelectorAll("input[type=checkbox]").forEach((checkbox) => {
+  checkbox.addEventListener("change", (e) => {
+    filters[checkbox.name] = checkbox.checked;
+    main.innerHTML = `
         <div class="lds-roller">
         <div></div>
         <div></div>
@@ -155,70 +155,66 @@ document.querySelectorAll("input[type=checkbox]").forEach((checkbox)=>{
         <div></div>
         <div></div>
       </div>
-        `
-        applyFilters()
-    })
-})
+        `;
+    applyFilters();
+  });
+});
 
-function applyFilters(){
-  console.log(filters)
-  let flag = false
-  for(let key in filters){
-    if(filters[key]){
-      flag = true
+function applyFilters() {
+  console.log(filters);
+  let flag = false;
+  for (let key in filters) {
+    if (filters[key]) {
+      flag = true;
     }
   }
-  if(flag){
-    let filterClasses = allClasses.filter((cls)=>{
-      for(let key in filters){
-        if(filters[key] && cls.classStatus == key){
-          return cls
+  if (flag) {
+    let filterClasses = allClasses.filter((cls) => {
+      for (let key in filters) {
+        if (filters[key] && cls.classStatus == key) {
+          return cls;
         }
       }
-    })
-    console.log(filterClasses)
-    displayClasses(filterClasses)
-  }else{
-    displayClasses(allClasses)
+    });
+    console.log(filterClasses);
+    displayClasses(filterClasses);
+  } else {
+    displayClasses(allClasses);
   }
 }
 
-let sort = document.getElementById("sort")
+let sort = document.getElementById("sort");
 
-sort.addEventListener("change", (e)=>{
-    let value = sort.value;
-    let data = [...allClasses]
-    if(value==""){
-      displayClasses(allClasses)
-    }else
-    if(value == "asc"){
-        data.sort((a,b)=>{
-            return a.classFee - b.classFee
-        })
-        displayClasses(data)
-    }else
-    if(value == "desc"){
-        data.sort((a,b)=>{
-            return b.classFee - a.classFee
-        })
-        displayClasses(data)
-    }else
-    if(value == "review"){
-        
-        for (let i = data.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [data[i], data[j]] = [data[j], data[i]];
-        }
-        displayClasses(data)
+sort.addEventListener("change", (e) => {
+  let value = sort.value;
+  let data = [...allClasses];
+  if (value == "") {
+    displayClasses(allClasses);
+  } else if (value == "asc") {
+    data.sort((a, b) => {
+      return a.classFee - b.classFee;
+    });
+    displayClasses(data);
+  } else if (value == "desc") {
+    data.sort((a, b) => {
+      return b.classFee - a.classFee;
+    });
+    displayClasses(data);
+  } else if (value == "review") {
+    for (let i = data.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [data[i], data[j]] = [data[j], data[i]];
     }
-})
+    displayClasses(data);
+  }
+});
 
-function viewDetails(id){
-  let url = "../pages/classPage.html?id=" + id
-  window.open(url)
+function viewDetails(id) {
+  let url = "../pages/classPage.html?id=" + id;
+  window.open(url);
 }
 
-function bookNow(id){
-  let url = "../pages/book.html?id=" + id
-  window.open(url)
+function bookNow(id) {
+  let url = "../pages/book.html?id=" + id;
+  window.open(url);
 }
