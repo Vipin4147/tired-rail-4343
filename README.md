@@ -4,7 +4,7 @@
 Hello everyone, this is a Readme for our construct week project that has been completed successfully within the duration of 5 days. It was a group project.
 
 ### Live Links: 
-- [netlify link](https://helpful-llama-52acc9.netlify.app/)
+- [netlify link](https://aquamarine-madeleine-e87dbd.netlify.app/)
 - [backend link](https://weak-teal-lemur-slip.cyclic.app)
 
 
