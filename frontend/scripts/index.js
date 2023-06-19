@@ -57,3 +57,54 @@ btn3.onclick = () => {
   btn2.style.backgroundColor = "#999999";
   btn1.style.backgroundColor = "#999999";
 };
+
+let arr = [
+  "https://www.hdwallpaper.nu/wp-content/uploads/2017/02/fitness-17.jpg",
+  "https://www.hdwallpaper.nu/wp-content/uploads/2017/02/fitness-16.jpg",
+  "https://www.hdwallpaper.nu/wp-content/uploads/2017/02/fitness-20.jpg",
+  "http://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Desktop-Fitness-Wallpapers-Images.jpg",
+  "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=action-athlete-barbell-841130.jpg&fm=jpg",
+];
+let slide = document.getElementById("slide");
+let start = (im) => {
+  slide.innerHTML = null;
+  let ima = document.createElement("img");
+  ima.src = im;
+  slide.append(ima);
+};
+
+let first = document.getElementById("first");
+first.onclick = () => {
+  let im = arr[0];
+  start(im);
+};
+
+let second = document.getElementById("second");
+second.onclick = () => {
+  let im = arr[1];
+  start(im);
+};
+
+let third = document.getElementById("third");
+third.onclick = () => {
+  let im = arr[2];
+  start(im);
+};
+
+let fourth = document.getElementById("fourth");
+fourth.onclick = () => {
+  let im = arr[3];
+  start(im);
+};
+
+let fifth = document.getElementById("fifth");
+fifth.onclick = () => {
+  let im = arr[4];
+  start(im);
+};
+
+let user = document.getElementById("user");
+
+user.onclick = () => {
+  window.location.href = "./pages/login.html";
+};
