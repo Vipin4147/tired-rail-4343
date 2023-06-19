@@ -30,10 +30,11 @@
 
 
 // // =============google===============
-
-// // document.querySelector("#social-signin google").addEventListener("click",async()=>{
-// //     let data = await fetch("http://localhost:1112/auth/google")
-// // })
+let google=
+document.querySelector("#social-signin google")
+google.addEventListener("click",async()=>{
+    let data = await fetch("https://aquamarine-madeleine-e87dbd.netlify.app/auth/google")
+})
 
 
 

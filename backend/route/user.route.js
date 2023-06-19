@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
   });
 
 Userroute.post("/signup",async (req,res)=>{
-    const{ name, email, phone, password}=req.body
+    const{ name, email, password}=req.body
 
     const user =await UserModel.find({email})
     if(user.length<=0){
