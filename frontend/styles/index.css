@@ -210,3 +210,33 @@ cursor: pointer;
    #insta span:hover{
     cursor: pointer;
    }
+
+   #slide{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+   }
+
+   #slide img{
+    width: 100%;
+   }
+
+   #images{
+    width: 80%;
+    margin: auto;
+    margin-top: -5px;
+    display: flex;
+   }
+   #images div{
+    width: 20%;
+   }
+
+   #images div img{
+    width: 100%;
+    height: 180px;
+   }
+
+
+   #images div:hover{
+    cursor: pointer;
+   }
