@@ -7,6 +7,13 @@ var offers = {
   MASAI20: "20%",
   GET10: "10%",
 };
+
+let name = localStorage.getItem('userName');
+if(name){
+  let n = document.querySelector("#user>span");
+  n.innerHTML = name;
+}
+
 getLocation();
 function getLocation() {
   if (navigator.geolocation) {

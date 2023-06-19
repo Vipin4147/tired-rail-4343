@@ -1,6 +1,12 @@
 const city = document.querySelector("#location>span");
 const parent = document.querySelector("section");
 
+let name = localStorage.getItem('userName');
+if(name){
+  let n = document.querySelector("#user>span");
+  n.innerHTML = name;
+}
+
 getLocation();
 function getLocation() {
   if (navigator.geolocation) {
@@ -222,7 +228,6 @@ function getClasses(name) {
       console.log(error);
     });
 }
-let name = "Ashik";
 getClasses(name);
 
 function displayClasses(data) {

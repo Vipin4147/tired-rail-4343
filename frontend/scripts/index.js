@@ -4,6 +4,12 @@ let sarr = [
   "https://www.lakeshoresf.com/wp-content/uploads/2021/04/Kids-Fitness-Training-Lincoln-Park-Chicago-scaled.jpeg",
 ];
 
+let name = localStorage.getItem('userName');
+if(name){
+  let n = document.querySelector("#user>span");
+  n.innerHTML = name;
+}
+
 let i = 1;
 let simg = document.getElementById("container");
 let img = document.createElement("img");

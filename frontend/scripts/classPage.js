@@ -1,5 +1,12 @@
 const city = document.querySelector("#location>span");
 const main = document.querySelector("main");
+
+let name = localStorage.getItem('userName');
+if(name){
+  let n = document.querySelector("#user>span");
+  n.innerHTML = name;
+}
+
 getLocation();
 function getLocation() {
   if (navigator.geolocation) {

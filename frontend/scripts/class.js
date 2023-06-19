@@ -1,5 +1,12 @@
 const city = document.querySelector("#location>span");
 const main = document.querySelector("article");
+
+let name = localStorage.getItem('userName');
+if(name){
+  let n = document.querySelector("#user>span");
+  n.innerHTML = name;
+}
+
 var allClasses = [];
 getLocation();
 function getLocation() {

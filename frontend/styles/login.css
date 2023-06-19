@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@200&display=swap");
 
 
 body{
@@ -64,26 +65,7 @@ nav{
 
 
 /* ============================================ */
-*{
-    margin: 0;
-    
-}
 
-
-.nav{
-    background-color: #2191e8;
-    height: 30px;
-    padding-top: 10px;
-
-}
-.nav p{
-    font-size: 10px;
-    text-align: center;
-    font-weight: 500;
-    color: white;
-   
-    /* margin: auto; */
-}
 
 #bg {
   position: fixed; 
