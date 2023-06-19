@@ -1,5 +1,5 @@
 
-# Fit India(Fitness First Clone)
+# Fit India (Your Fitness Class Planner)
 
 Hello everyone, this is a Readme for our construct week project that has been completed successfully within the duration of 5 days. It was a group project.
 
