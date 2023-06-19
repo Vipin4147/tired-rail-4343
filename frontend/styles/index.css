@@ -240,3 +240,8 @@ cursor: pointer;
    #images div:hover{
     cursor: pointer;
    }
+   
+
+   #user:hover{
+    cursor: pointer;
+   }

@@ -8,8 +8,8 @@ var offers = {
   GET10: "10%",
 };
 
-let name = localStorage.getItem('userName');
-if(name){
+let name = localStorage.getItem("userName");
+if (name) {
   let n = document.querySelector("#user>span");
   n.innerHTML = name;
 }
@@ -118,9 +118,9 @@ checkboxes.forEach((checkbox) => {
 
 let btn = document.querySelector("#code");
 btn.addEventListener("click", (event) => {
-  console.log(event.target.textContent);
+  console.log(event.target.innerText);
   let span = document.querySelector("#right>div:nth-child(1)>span");
-  if (event.target.textContent == "Check") {
+  if (event.target.innerText == "Check") {
     let code = document.querySelector("#codeInput").value;
     let offer = offers[code];
     currOffer = offer;
@@ -136,7 +136,7 @@ btn.addEventListener("click", (event) => {
       span.style.visibility = "visible";
     }
   } else {
-    event.target.textContent = "Offer Applied";
+    // event.target.textContent = "Offer Applied";
     let off = currOffer.split("%");
     console.log(off);
     classFee = +classFee * (+off[0] / 100);
