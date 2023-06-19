@@ -213,58 +213,58 @@ main {
   background-color: #000;
 }
 
-#left{
+#left {
   width: 33%;
   /* display: none; */
   /* border: #000 solid 1px; */
 }
-#right{
+#right {
   width: 30%;
   /* display: none; */
   /* border: #000 solid 1px; */
 }
-#pay{
+#pay {
   width: 30%;
   /* border: #000 solid 1px; */
 }
 
-#left>div{
+#left > div {
   display: flex;
   width: 100%;
 }
-#left>div>img{
+#left > div > img {
   width: 70%;
 }
 
-#left>div h1{
+#left > div h1 {
   margin-left: 30px;
   font-size: 50px;
 }
-#left>div h3{
+#left > div h3 {
   margin-left: 35px;
   font-size: 30px;
 }
-#left>p{
+#left > p {
   font-size: 20px;
-  margin: 20px 0 ;
+  margin: 20px 0;
   width: 65%;
 }
-#left>p>span{
+#left > p > span {
   text-decoration: underline;
 }
 
-#left>p:nth-child(3){
+#left > p:nth-child(3) {
   text-align: justify;
 }
 
-#right>div:nth-child(1)>h1{
+#right > div:nth-child(1) > h1 {
   font-size: 50px;
 }
-#right>div:nth-child(1)>input{
+#right > div:nth-child(1) > input {
   padding-left: 15px;
   width: 220px;
   height: 40px;
-  
+
   border-left: 0;
   border-top: 0;
   border-right: 0;
@@ -273,14 +273,14 @@ main {
   background: transparent;
   font-size: 17px;
 }
-#right>div:nth-child(1)>input::placeholder{
-    color: #000000;
-    opacity: 1;
+#right > div:nth-child(1) > input::placeholder {
+  color: #000000;
+  opacity: 1;
 }
-#right>div:nth-child(1)>input:focus::placeholder{
-    opacity: 0;
+#right > div:nth-child(1) > input:focus::placeholder {
+  opacity: 0;
 }
-#right>div:nth-child(1)>button{
+#right > div:nth-child(1) > button {
   width: 110px;
   height: 45px;
   margin-left: 25px;
@@ -289,8 +289,9 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
-#right>div:nth-child(1)>span{
-  background-color: #30ff1d;position: relative;
+#right > div:nth-child(1) > span {
+  background-color: #30ff1d;
+  position: relative;
   top: 5px;
   padding: 1px 5px;
   color: rgb(0, 0, 0);
@@ -298,24 +299,24 @@ main {
   visibility: hidden;
 }
 
-#payment>h3{
+#payment > h3 {
   font-size: 30px;
 }
-#payment>div{
+#payment > div {
   width: 88%;
   display: flex;
   justify-content: space-between;
   margin: 20px;
 }
-#right>div:nth-child(3){
+#right > div:nth-child(3) {
   width: 100%;
   /* text-align: center; */
 }
-#right>div:nth-child(3)>p{
+#right > div:nth-child(3) > p {
   font-size: 17px;
   margin: 20px 0;
 }
-#right>div:nth-child(3)>button{
+#right > div:nth-child(3) > button {
   font-size: 17px;
   margin: 20px 20%;
   width: 60%;
@@ -326,13 +327,6 @@ main {
   cursor: pointer;
   visibility: hidden;
 }
-
-
-
-
-
-
-
 
 *,
 *::before,
@@ -355,7 +349,7 @@ Buttons
 }
 
 .btn::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 1;
   top: 0;
@@ -418,7 +412,7 @@ Form
   padding: 10px;
   border-radius: 5px;
   font-size: 15px;
-  outline: none ;
+  outline: none;
   border: 1px solid hsla(0, 0, 0, 0.3);
   box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
 }
@@ -438,7 +432,7 @@ Form
 }
 
 .form .select::after {
-  content: '';
+  content: "";
   border-top: 8px solid #222;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
@@ -480,7 +474,6 @@ Form
   margin-top: 90px;
   cursor: pointer;
 }
-
 
 /*--------------------
 Checkout
@@ -530,7 +523,7 @@ Credit Card
 }
 
 .credit-card-box .front::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -565,12 +558,17 @@ Credit Card
   height: 45px;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, hsl(269, 54%, 87%) 0%, hsl(200, 64%, 89%) 44%, hsl(18, 55%, 94%) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(269, 54%, 87%) 0%,
+    hsl(200, 64%, 89%) 44%,
+    hsl(18, 55%, 94%) 100%
+  );
   border-radius: 8px;
 }
 
 .credit-card-box .chip::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -661,11 +659,8 @@ Credit Card
   max-width: 100%;
 }
 
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-

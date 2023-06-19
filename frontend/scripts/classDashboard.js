@@ -1,7 +1,7 @@
 const city = document.querySelector("#location>span");
 const parent = document.querySelector("section");
 
-// getLocation();
+getLocation();
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -114,20 +114,20 @@ let main = document.querySelector("article");
 const addClass = () => {
   console.log("addClass");
 
-  const imageUrl = document.getElementById("imageUrl").value
-  const className= document.getElementById("className").value
-  const trainerName = document.getElementById("trainerName").value
-  const classDiscription = document.getElementById("classDiscription").value
-  const classNote = document.getElementById("classNote").value
-  const classStatus = document.getElementById("classStatus").value
-  const classDate = document.getElementById("classDate").value
-  const time = document.getElementById("time").value
-  const ampm = document.getElementById("ampm").value
-  const classTime = `${time}:00 ${ampm}`
-  const classFee = document.getElementById("classFee").value
-  const totalSlots = document.getElementById("totalSlots").value
+  const imageUrl = document.getElementById("imageUrl").value;
+  const className = document.getElementById("className").value;
+  const trainerName = document.getElementById("trainerName").value;
+  const classDiscription = document.getElementById("classDiscription").value;
+  const classNote = document.getElementById("classNote").value;
+  const classStatus = document.getElementById("classStatus").value;
+  const classDate = document.getElementById("classDate").value;
+  const time = document.getElementById("time").value;
+  const ampm = document.getElementById("ampm").value;
+  const classTime = `${time}:00 ${ampm}`;
+  const classFee = document.getElementById("classFee").value;
+  const totalSlots = document.getElementById("totalSlots").value;
 
-  let newClass ={
+  let newClass = {
     imageUrl,
     className,
     trainerName,
@@ -137,10 +137,10 @@ const addClass = () => {
     classDate,
     classTime,
     classFee,
-    totalSlots
-  }
+    totalSlots,
+  };
   try {
-    fetch("http://localhost:3030/class/addClass", {
+    fetch("https://weak-teal-lemur-slip.cyclic.app/class/addClass", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -150,12 +150,12 @@ const addClass = () => {
       console.log(response);
       getClasses(name);
       alert("Class successfully added");
-      closePopup()
+      closePopup();
     });
   } catch (error) {
     console.error(error);
   }
-}
+};
 
 function displayEditForm(data) {
   let popup = document.getElementById("popup");
@@ -212,24 +212,23 @@ function displayEditForm(data) {
 }
 
 function getClasses(name) {
-  fetch(`http://localhost:3030/class/trainerName?n=${name}`)
+  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/trainerName?n=${name}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data[0]);
-      displayClasses(data)
+      displayClasses(data);
     })
     .catch((error) => {
       console.log(error);
     });
 }
-let name= "Ashik"
+let name = "Ashik";
 getClasses(name);
 
-
 function displayClasses(data) {
-  document.getElementById("total").innerHTML = data.length
-  let html=''
-  data.forEach((cls)=>{
+  document.getElementById("total").innerHTML = data.length;
+  let html = "";
+  data.forEach((cls) => {
     html += `<div id="class">
     <div id="images">
       <img src="${cls.imageUrl}" alt="" />
@@ -244,13 +243,13 @@ function displayClasses(data) {
     <div id="edit">
       <p class="public">${cls.classStatus}</p>
       <p id="slot">
-        ${cls.totalSlots-1} slot <br />
+        ${cls.totalSlots - 1} slot <br />
         left
       </p>
       <button>Edit Class</button>
       <button>Delete Class</button>
     </div>
-  </div>`
-  })
-  main.innerHTML = html
+  </div>`;
+  });
+  main.innerHTML = html;
 }
