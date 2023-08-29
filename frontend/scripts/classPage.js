@@ -1,4 +1,4 @@
-const city = document.querySelector("#location>span");
+
 const main = document.querySelector("main");
 
 let name = localStorage.getItem('userName');
@@ -7,7 +7,15 @@ if(name){
   n.innerHTML = name;
 }
 
-getLocation();
+const city = document.querySelector("#location>span");
+
+let userLocation = localStorage.getItem("userLocation") || null;
+
+if(userLocation){
+  city.innerHTML = userLocation
+}else{
+  getLocation();
+}
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -65,7 +73,7 @@ if (id) {
   window.location.href = "../pages/class.html";
 }
 function getClass(id) {
-  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/classId/${id}`)
+  fetch(`https://fit-india.onrender.com/class/classId/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);

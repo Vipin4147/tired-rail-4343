@@ -1,4 +1,4 @@
-const city = document.querySelector("#location>span");
+
 const parent = document.querySelector("section");
 
 let name = localStorage.getItem('userName');
@@ -7,7 +7,15 @@ if(name){
   n.innerHTML = name;
 }
 
-getLocation();
+const city = document.querySelector("#location>span");
+
+let userLocation = localStorage.getItem("userLocation") || null;
+
+if(userLocation){
+  city.innerHTML = userLocation
+}else{
+  getLocation();
+}
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -146,7 +154,7 @@ const addClass = () => {
     totalSlots,
   };
   try {
-    fetch("https://weak-teal-lemur-slip.cyclic.app/class/addClass", {
+    fetch("https://fit-india.onrender.com/class/addClass", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -218,7 +226,7 @@ function displayEditForm(data) {
 }
 
 function getClasses(name) {
-  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/trainerName?n=${name}`)
+  fetch(`https://fit-india.onrender.com/class/trainerName?n=${name}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data[0]);

@@ -1,11 +1,11 @@
 
-# Fit India(Fitness First Clone)
+# Fit India (Your Fitness Class Planner)
 
 Hello everyone, this is a Readme for our construct week project that has been completed successfully within the duration of 5 days. It was a group project.
 
 ### Live Links: 
-- [netlify link](https://helpful-llama-52acc9.netlify.app/)
-- [backend link](https://weak-teal-lemur-slip.cyclic.app)
+- [netlify link](https://aquamarine-madeleine-e87dbd.netlify.app/)
+- [backend link](https://fit-india.onrender.com)
 
 
 ## Developers
@@ -24,7 +24,7 @@ Hello everyone, this is a Readme for our construct week project that has been co
 > git clone (https://github.com/Vipin4147/tired-rail-4343)
 > cd ./fitindia
 > ```
-> After entering the commands mentioned above, open [https://weak-teal-lemur-slip.cyclic.app](https://weak-teal-lemur-slip.cyclic.app) to view the app in the browser.
+> After entering the commands mentioned above, open [https://fit-india.onrender.com](https://fit-india.onrender.com) to view the app in the browser.
 
 ## Tech-Stack:
 

@@ -1,154 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Class</title>
-    <link rel="shortcut icon" href="../images/logo.jpeg" type="image/x-icon" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="../styles/class.css" />
-  </head>
-  <body>
-    <nav>
-      <h1 id="logo">
-        <img
-          src="../images/navLogo.png"
-          alt=""
-          onclick="window.location.href='../index.html'"
-        />
-      </h1>
-      <h1 id="tags">
-        <a href="../index.html">HOME</a>
-        <a href="">ABOUT</a>
-        <a href="">GYMS</a><a href="">TRAINERS</a><a href="#">CLASSES</a>
-      </h1>
-      <h1 id="info">
-        <p id="location">
-          <ion-icon name="location-outline"></ion-icon><span>INDIA</span>
-        </p>
-        <p id="notifications">
-          <ion-icon name="notifications-outline"></ion-icon><span>0</span>
-        </p>
-        <p id="user">
-          <ion-icon name="person-outline"></ion-icon><span>Login</span>
-        </p>
-      </h1>
-    </nav>
-    <main>
-      <aside id="left">
-        <div id="sortBy">
-          <select name="sort" id="sort">
-            <option value="">Popular</option>
-            <option value="asc">Fee: Low To High</option>
-            <option value="desc">Fee: High To Low</option>
-            <option value="review">Customer Review</option>
-          </select>
-        </div>
-        <div id="byStatus">
-          <p>Class Type</p>
-          <div id="Public">
-            <input type="checkbox" name="Public" id="PublicCheckbox" />Public
-          </div>
-          <div id="Private">
-            <input type="checkbox" name="Private" id="PrivateCheckbox" />Private
-          </div>
-          <div id="Personal">
-            <input
-              type="checkbox"
-              name="Personal"
-              id="PersonalCheckbox"
-            />Personal
-          </div>
-        </div>
-      </aside>
-      <section>
-        <div class="search-wrapper">
-          <div class="input-holder">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search Trainer By Name"
-            />
-            <button class="search-icon" onclick="searchToggle(this, event);">
-              <span></span>
-            </button>
-          </div>
-          <span class="close" onclick="searchToggle(this, event);"></span>
-        </div>
-        <article>
-          <div class="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </article>
-      </section>
-    </main>
-    <footer>
-      <div>
-        <h3>Let Us Help You</h3>
-        <ul>
-          <li>COVID-19 and FitIndia</li>
-          <li>Your Account</li>
-          <li>Report Center</li>
-          <li>100% Purchase Protection</li>
-          <li>FitIndia App Download</li>
-          <li>Help</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Make Money with Us</h3>
-        <ul>
-          <li>Start on FitIndia</li>
-          <li>Start under FitIndia Accelerator</li>
-          <li>Become an Affiliate</li>
-          <li>Fulfilment by FitIndia</li>
-          <li>Advertise Your Products</li>
-          <li>Help On Start with Us</li>
-        </ul>
-      </div>
-      <div>
-        <h3>About Us</h3>
-        <ul>
-          <li>FAQ</li>
-          <li>Our Investors</li>
-          <li>Newsroom</li>
-          <li>Careers</li>
-          <li>Blogs</li>
-          <li>Developers</li>
-        </ul>
-      </div>
-      <div>
-        <div>
-          <ion-icon name="logo-instagram"></ion-icon>
-          <ion-icon name="logo-twitter"></ion-icon>
-          <ion-icon name="logo-facebook"></ion-icon>
-        </div>
-        <ul>
-          <li>Gym Dashboard</li>
-          <li>Trainer Dashboard</li>
-          <li onclick="window.location.href='./classDashboard.html'">
-            Class Dashboard
-          </li>
-          <li></li>
-          <li>Admin</li>
-          <li>© ALL RIGHTS RESERVED</li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>All Class</title>
+		<link
+			rel="shortcut icon"
+			href="../images/logo.jpeg"
+			type="image/x-icon"
+		/>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+		></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="../styles/class.css" />
+	</head>
+	<body>
+		<nav>
+			<h1 id="logo">
+				<img
+					src="../images/navLogo.png"
+					alt=""
+					onclick="window.location.href='../index.html'"
+				/>
+			</h1>
+			<h1 id="tags">
+				<a href="../index.html">HOME</a>
+				<a href="">ABOUT</a>
+				<a href="">GYMS</a><a href="">TRAINERS</a><a href="#">CLASSES</a>
+			</h1>
+			<h1 id="info">
+				<p id="location">
+					<ion-icon name="location-outline"></ion-icon><span>INDIA</span>
+				</p>
+				<p id="notifications">
+					<ion-icon name="notifications-outline"></ion-icon><span>0</span>
+				</p>
+				<p id="user">
+					<ion-icon name="person-outline"></ion-icon><span>Login</span>
+				</p>
+			</h1>
+		</nav>
+		<main>
+			<aside id="left">
+				<div id="sortBy">
+					<select name="sort" id="sort">
+						<option value="">Popular</option>
+						<option value="asc">Fee: Low To High</option>
+						<option value="desc">Fee: High To Low</option>
+						<option value="review">Customer Review</option>
+					</select>
+				</div>
+				<div id="byStatus">
+					<p>Class Type</p>
+					<div id="Public">
+						<input
+							type="checkbox"
+							name="Public"
+							id="PublicCheckbox"
+						/>Public
+					</div>
+					<div id="Private">
+						<input
+							type="checkbox"
+							name="Private"
+							id="PrivateCheckbox"
+						/>Private
+					</div>
+					<div id="Personal">
+						<input
+							type="checkbox"
+							name="Personal"
+							id="PersonalCheckbox"
+						/>Personal
+					</div>
+				</div>
+			</aside>
+			<section>
+				<div class="search-wrapper">
+					<div class="input-holder">
+						<input
+							type="text"
+							class="search-input"
+							placeholder="Search Trainer By Name"
+						/>
+						<button
+							class="search-icon"
+							onclick="searchToggle(this, event);"
+						>
+							<span></span>
+						</button>
+					</div>
+					<span class="close" onclick="searchToggle(this, event);"></span>
+				</div>
+				<article>
+					<div class="lds-roller">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<div>
+				<h3>Let Us Help You</h3>
+				<ul>
+					<li>COVID-19 and FitIndia</li>
+					<li>Your Account</li>
+					<li>Report Center</li>
+					<li>100% Purchase Protection</li>
+					<li>FitIndia App Download</li>
+					<li>Help</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Make Money with Us</h3>
+				<ul>
+					<li>Start on FitIndia</li>
+					<li>Start under FitIndia Accelerator</li>
+					<li>Become an Affiliate</li>
+					<li>Fulfilment by FitIndia</li>
+					<li>Advertise Your Products</li>
+					<li>Help On Start with Us</li>
+				</ul>
+			</div>
+			<div>
+				<h3>About Us</h3>
+				<ul>
+					<li>FAQ</li>
+					<li>Our Investors</li>
+					<li>Newsroom</li>
+					<li>Careers</li>
+					<li>Blogs</li>
+					<li>Developers</li>
+				</ul>
+			</div>
+			<div>
+				<div>
+					<ion-icon name="logo-instagram"></ion-icon>
+					<ion-icon name="logo-twitter"></ion-icon>
+					<ion-icon name="logo-facebook"></ion-icon>
+				</div>
+				<ul>
+					<li>Gym Dashboard</li>
+					<li>Trainer Dashboard</li>
+					<li onclick="window.location.href='./classDashboard.html'">
+						Class Dashboard
+					</li>
+					<li></li>
+					<li>Admin</li>
+					<li>© ALL RIGHTS RESERVED</li>
+				</ul>
+			</div>
+		</footer>
+	</body>
 </html>
 <script src="../scripts/class.js"></script>
