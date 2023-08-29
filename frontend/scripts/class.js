@@ -94,7 +94,7 @@ search.addEventListener("change", (e) => {
   <div></div>
 </div>`;
 	let name = e.target.value;
-	fetch(`https://weak-teal-lemur-slip.cyclic.app/class/trainerName?n=${name}`)
+	fetch(`https://fit-india.onrender.com/class/trainerName?n=${name}`)
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
@@ -111,7 +111,7 @@ search.addEventListener("change", (e) => {
 
 getAllClasses();
 function getAllClasses() {
-	fetch(`https://weak-teal-lemur-slip.cyclic.app/class/`)
+	fetch(`https://fit-india.onrender.com/class/`)
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data[0]);

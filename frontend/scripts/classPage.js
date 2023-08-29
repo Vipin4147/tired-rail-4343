@@ -73,7 +73,7 @@ if (id) {
   window.location.href = "../pages/class.html";
 }
 function getClass(id) {
-  fetch(`https://weak-teal-lemur-slip.cyclic.app/class/classId/${id}`)
+  fetch(`https://fit-india.onrender.com/class/classId/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
