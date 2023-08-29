@@ -19,7 +19,13 @@ form.addEventListener("submit", (e) => {
 
 const city = document.querySelector("#location>span");
 
-getLocation();
+let userLocation = localStorage.getItem("userLocation") || null;
+
+if(userLocation){
+  city.innerHTML = userLocation
+}else{
+  getLocation();
+}
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(

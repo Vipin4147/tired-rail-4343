@@ -1,247 +1,250 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@200&display=swap");
 
-
-body{
-    margin: 0px;
-    padding: 0px;
-    /* background-color: #74BDE0; */
-    background-image: url("../images/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Open Sans', sans-serif;
-    backdrop-filter: blur(5px);
-    color: #000;
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #a0a0a0b6;
+	/* background-image: url("../images/background.png"); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Open Sans", sans-serif;
+	backdrop-filter: blur(5px);
+	color: #000;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: #A1E1FA; */
-    backdrop-filter: blur(25px);
-    position: sticky;
-    top: 0px;
+nav {
+	display: flex;
+	height: max-content;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #babbbd;
+	backdrop-filter: blur(25px);
+	position: sticky;
+	top: 0px;
 }
-#logo{
-    width: 20%;
+nav > h1 {
+	margin: 0px;
 }
-#logo>img{
-    width: 50%;
+#logo {
+	width: 20%;
+	position: relative;
+	top: 5px;
 }
-#tags{
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+#logo > img {
+	width: 50%;
 }
-#tags>a{
-    color: #000;
-    text-decoration: none;
+#tags {
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
 }
-#info{
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-right: 30px;
+#tags > a {
+	color: #000;
+	text-decoration: none;
 }
-#info ion-icon{
-    position: relative;
-    top: 3px;
+#info {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin-right: 30px;
 }
-
-footer{
-    backdrop-filter: blur(25px);
-    display: flex;justify-content: space-evenly;
-    background-color: #eeeeee3d;
-    margin: 30px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-}
-footer h3{
-    font-size: 25px;
-}
-footer ul{
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 15px;
-}
-footer li{
-    margin-bottom: 10px;
-    font-size: 17px;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    cursor: pointer;
-}
-footer ion-icon{
-    width: 50px;
-    height: 50px;
-    margin: 50px 10px 0px 0;
-    cursor: pointer;
+#info ion-icon {
+	position: relative;
+	top: 3px;
 }
 
-#container{
-    display: flex;
-    margin: auto;
+footer {
+	backdrop-filter: blur(25px);
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #eeeeee3d;
+	margin: 30px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+}
+footer h3 {
+	font-size: 25px;
+}
+footer ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 15px;
+}
+footer li {
+	margin-bottom: 10px;
+	font-size: 17px;
+	/* font-family: Arial, Helvetica, sans-serif; */
+	cursor: pointer;
+}
+footer ion-icon {
+	width: 50px;
+	height: 50px;
+	margin: 50px 10px 0px 0;
+	cursor: pointer;
 }
 
-#container>img{
-    width: 100%;
-    height: 600px;
+#container {
+	display: flex;
+	margin: auto;
 }
 
-#sbtn>button{
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: #999999;
-    border: 0px;
-   }
-   
-   #sbtn{
-       margin-left: 50%;
-       margin-top: -25px;
-   }
-   
-   #sbtn>button:nth-child(1){
-      background-color: #d23d1b;
-   }
+#container > img {
+	width: 100%;
+	height: 600px;
+}
 
-   #inform{
-    width: 80%;
-    margin: auto;
-    margin-top: 70px;
+#sbtn > button {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background-color: #999999;
+	border: 0px;
+}
 
-    display: flex;
-    justify-content: space-between;
-   }
+#sbtn {
+	margin-left: 50%;
+	margin-top: -25px;
+}
 
-   #inform img{
-    width: 100%;
-    height: 300px;
-   }
+#sbtn > button:nth-child(1) {
+	background-color: #d23d1b;
+}
 
-   #inform>div{
-    width: 48%;
-   }
+#inform {
+	width: 80%;
+	margin: auto;
+	margin-top: 70px;
 
-   #inform h2{
-    color: #ffff;
-   }
+	display: flex;
+	justify-content: space-between;
+}
 
-   #inform p{
-    color: #ffff;
-    padding-bottom: 10px;
-   }
+#inform img {
+	width: 100%;
+	height: 300px;
+}
 
-   #clas div{
-    padding-right: 50px;
-    padding-left: 20px;
-   
-   }
+#inform > div {
+	width: 48%;
+}
 
-   #try_us div{
-    padding-right: 50px;
-    padding-left: 20px;
-   }
+#inform h2 {
+	color: #ffff;
+}
 
-   #clas div{
-   background-color: #423c38;
-   margin-top: -130px;
-   /* opacity: 0.9; */
-   }
+#inform p {
+	color: #ffff;
+	padding-bottom: 10px;
+}
 
-   #try_us div{
-    background-color: #423c38;
-    margin-top: -130px;
-    /* opacity: 0.9; */
-   }
+#clas div {
+	padding-right: 50px;
+	padding-left: 20px;
+}
 
-   #clas:hover{
-    cursor: pointer;
-   }
-   
-   #try_us:hover{
-cursor: pointer;
-   }
+#try_us div {
+	padding-right: 50px;
+	padding-left: 20px;
+}
 
-   #health{
-    width: 80%;
-   text-align: center;
-   margin: auto;
-   }
+#clas div {
+	background-color: #423c38;
+	margin-top: -130px;
+	/* opacity: 0.9; */
+}
 
-   #health h2{
-    color: #ffff;
-   }
+#try_us div {
+	background-color: #423c38;
+	margin-top: -130px;
+	/* opacity: 0.9; */
+}
 
-   #health p{
-    color: #ffff;
-   }
+#clas:hover {
+	cursor: pointer;
+}
 
-   #health button{
-    color: #ffff;
-    background-color: #d23d1b;
-    border: 0px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: 600;
-   }
+#try_us:hover {
+	cursor: pointer;
+}
 
-   #health button:hover{
-    cursor: pointer;
-   }
+#health {
+	width: 80%;
+	text-align: center;
+	margin: auto;
+}
 
-   #insta{
-    width: 80%;
-   text-align: center;
-   margin: auto;
-   }
+#health h2 {
+	color: #ffff;
+}
 
-   #insta h2{
-    color: #ffff;
-   }
+#health p {
+	color: #ffff;
+}
 
-   #insta p{
-    color: #ffff;
-   }
+#health button {
+	color: #ffff;
+	background-color: #d23d1b;
+	border: 0px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	font-weight: 600;
+}
 
-   #insta span{
-    color: #d23d1b;
-   }
+#health button:hover {
+	cursor: pointer;
+}
 
-   #insta span:hover{
-    cursor: pointer;
-   }
+#insta {
+	width: 80%;
+	text-align: center;
+	margin: auto;
+}
 
-   #slide{
-    width: 80%;
-    margin: auto;
-    margin-top: 50px;
-   }
+#insta h2 {
+	color: #ffff;
+}
 
-   #slide img{
-    width: 100%;
-   }
+#insta p {
+	color: #ffff;
+}
 
-   #images{
-    width: 80%;
-    margin: auto;
-    margin-top: -5px;
-    display: flex;
-   }
-   #images div{
-    width: 20%;
-   }
+#insta span {
+	color: #d23d1b;
+}
 
-   #images div img{
-    width: 100%;
-    height: 180px;
-   }
+#insta span:hover {
+	cursor: pointer;
+}
 
+#slide {
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+}
 
-   #images div:hover{
-    cursor: pointer;
-   }
-   
+#slide img {
+	width: 100%;
+}
 
-   #user:hover{
-    cursor: pointer;
-   }
+#images {
+	width: 80%;
+	margin: auto;
+	margin-top: -5px;
+	display: flex;
+}
+#images div {
+	width: 20%;
+}
+
+#images div img {
+	width: 100%;
+	height: 180px;
+}
+
+#images div:hover {
+	cursor: pointer;
+}
+
+#user:hover {
+	cursor: pointer;
+}
