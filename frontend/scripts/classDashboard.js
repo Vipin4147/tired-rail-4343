@@ -1,4 +1,4 @@
-const city = document.querySelector("#location>span");
+
 const parent = document.querySelector("section");
 
 let name = localStorage.getItem('userName');
@@ -7,7 +7,15 @@ if(name){
   n.innerHTML = name;
 }
 
-getLocation();
+const city = document.querySelector("#location>span");
+
+let userLocation = localStorage.getItem("userLocation") || null;
+
+if(userLocation){
+  city.innerHTML = userLocation
+}else{
+  getLocation();
+}
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(

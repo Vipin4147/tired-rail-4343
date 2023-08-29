@@ -117,7 +117,13 @@ user.onclick = () => {
 
 const city = document.querySelector("#location>span");
 
-getLocation();
+let userLocation = localStorage.getItem("userLocation") || null;
+
+if(userLocation){
+  city.innerHTML = userLocation
+}else{
+  getLocation();
+}
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -139,7 +145,8 @@ function getLocation() {
           .then(function (data) {
             city.innerHTML = data[0].name.toUpperCase();
 
-            console.log(city.innerText);
+            localStorage.setItem("userLocation", data[0].name.toUpperCase())
+            console.log(data);
           })
           .catch(function (error) {
             console.log("Error:", error);
