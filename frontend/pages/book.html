@@ -1,148 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Class</title>
-    <link rel="shortcut icon" href="../images/logo.jpeg" type="image/x-icon" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book Class</title>
+		<link
+			rel="shortcut icon"
+			href="../images/logo.jpeg"
+			type="image/x-icon"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="../styles/book.css" />
-  </head>
-  <body>
-    <nav>
-      <h1 id="logo">
-        <img
-          src="../images/navLogo.png"
-          alt=""
-          onclick="window.location.href='../index.html'"
-        />
-      </h1>
-      <h1 id="tags">
-        <a href="../index.html">HOME</a>
-        <a href="">ABOUT</a>
-        <a href="">GYMS</a><a href="">TRAINERS</a
-        ><a href="./class.html">CLASSES</a>
-      </h1>
-      <h1 id="info">
-        <p id="location">
-          <ion-icon name="location-outline"></ion-icon><span>INDIA</span>
-        </p>
-        <p id="notifications">
-          <ion-icon name="notifications-outline"></ion-icon><span>0</span>
-        </p>
-        <p id="user">
-          <ion-icon name="person-outline"></ion-icon><span>Login</span>
-        </p>
-      </h1>
-    </nav>
-    <main>
-      <div id="left">
-        <div class="lds-roller">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div id="right">
-        <div>
-          <h1>Total Fee : 1000</h1>
-          <input type="text" placeholder="Enter Code" id="codeInput" /><button
-            id="code"
-          >
-            Check
-          </button>
-          <br />
-          <span></span>
-        </div>
-        <div id="payment">
-          <h3>Payment Methods</h3>
-          <div>
-            <span>Pay with Debit/Credit/ATM Cards</span>
-            <span
-              ><input type="checkbox" name="paymentMethod" id="card" checked />
-              <label for="card"></label
-            ></span>
-          </div>
-          <div>
-            <span>Net Banking</span>
-            <span
-              ><input type="checkbox" name="paymentMethod" id="net" />
-              <label for="net"></label
-            ></span>
-          </div>
-          <div>
-            <span>UPI Apps</span>
-            <span
-              ><input type="checkbox" name="paymentMethod" id="upi" />
-              <label for="upi"></label
-            ></span>
-          </div>
-          <div>
-            <span>Gift Card</span>
-            <span>
-              <input type="checkbox" name="paymentMethod" id="giftCard" />
-              <label for="giftCard"></label>
-            </span>
-          </div>
-          <div>
-            <span>Offline</span>
-            <span
-              ><input type="checkbox" name="paymentMethod" id="offline" />
-              <label for="offline"></label
-            ></span>
-          </div>
-        </div>
-        <div>
-          <p>
-            <input type="checkbox" name="agree" value="yes" checked /><label
-              for="agree"
-            ></label>
-            <span
-              >I agree to the <a href="#">terms</a> and
-              <a href="#">conditions</a></span
-            >
-          </p>
-          <button>Proceed</button>
-        </div>
-      </div>
-      <div id="pay">
-        <div class="checkout">
-          <div class="credit-card-box">
-            <div class="flip">
-              <div class="front">
-                <div class="chip"></div>
-                <div class="logo">
-                  <svg
-                    version="1.1"
-                    id="visa"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="47.834px"
-                    height="47.834px"
-                    viewBox="0 0 47.834 47.834"
-                    style="enable-background: new 0 0 47.834 47.834"
-                  >
-                    <g>
-                      <g>
-                        <path
-                          d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+		></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="../styles/book.css" />
+	</head>
+	<body>
+		<nav>
+			<h1 id="logo">
+				<img
+					src="../images/navLogo.png"
+					alt=""
+					onclick="window.location.href='../index.html'"
+				/>
+			</h1>
+			<h1 id="tags">
+				<a href="../index.html">HOME</a>
+				<a href="">ABOUT</a>
+				<a href="">GYMS</a><a href="">TRAINERS</a
+				><a href="./class.html">CLASSES</a>
+			</h1>
+			<h1 id="info">
+				<p id="location">
+					<ion-icon name="location-outline"></ion-icon><span>INDIA</span>
+				</p>
+				<p id="notifications">
+					<ion-icon name="notifications-outline"></ion-icon><span>0</span>
+				</p>
+				<p id="user">
+					<ion-icon name="person-outline"></ion-icon><span>Login</span>
+				</p>
+			</h1>
+		</nav>
+		<main>
+			<div id="left">
+				<div class="lds-roller">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div id="right">
+				<div>
+					<h1>Total Fee : 1000</h1>
+					<input
+						type="text"
+						placeholder="Enter Code"
+						id="codeInput"
+					/><button id="code">Check</button>
+					<br />
+					<span></span>
+				</div>
+				<div id="payment">
+					<h3>Payment Methods</h3>
+					<div>
+						<span>Pay with Debit/Credit/ATM Cards</span>
+						<span
+							><input
+								type="checkbox"
+								name="paymentMethod"
+								id="card"
+								checked />
+							<label for="card"></label
+						></span>
+					</div>
+					<div>
+						<span>Net Banking</span>
+						<span
+							><input type="checkbox" name="paymentMethod" id="net" />
+							<label for="net"></label
+						></span>
+					</div>
+					<div>
+						<span>UPI Apps</span>
+						<span
+							><input type="checkbox" name="paymentMethod" id="upi" />
+							<label for="upi"></label
+						></span>
+					</div>
+					<div>
+						<span>Gift Card</span>
+						<span>
+							<input
+								type="checkbox"
+								name="paymentMethod"
+								id="giftCard"
+							/>
+							<label for="giftCard"></label>
+						</span>
+					</div>
+					<div>
+						<span>Offline</span>
+						<span
+							><input
+								type="checkbox"
+								name="paymentMethod"
+								id="offline" />
+							<label for="offline"></label
+						></span>
+					</div>
+				</div>
+				<div>
+					<p>
+						<input
+							type="checkbox"
+							name="agree"
+							value="yes"
+							checked
+						/><label for="agree"></label>
+						<span
+							>I agree to the <a href="#">terms</a> and
+							<a href="#">conditions</a></span
+						>
+					</p>
+					<button>Proceed</button>
+				</div>
+			</div>
+			<div id="pay">
+				<div class="checkout">
+					<div class="credit-card-box">
+						<div class="flip">
+							<div class="front">
+								<div class="chip"></div>
+								<div class="logo">
+									<svg
+										version="1.1"
+										id="visa"
+										xmlns="http://www.w3.org/2000/svg"
+										xmlns:xlink="http://www.w3.org/1999/xlink"
+										x="0px"
+										y="0px"
+										width="47.834px"
+										height="47.834px"
+										viewBox="0 0 47.834 47.834"
+										style="enable-background: new 0 0 47.834 47.834"
+									>
+										<g>
+											<g>
+												<path
+													d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
                                  c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
                                  c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
                                  M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
@@ -153,40 +171,40 @@
                                  C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
                                  c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
                                  h-3.888L19.153,16.8z"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-                <div class="number"></div>
-                <div class="card-holder">
-                  <label>Card holder</label>
-                  <div></div>
-                </div>
-                <div class="card-expiration-date">
-                  <label>Expires</label>
-                  <div></div>
-                </div>
-              </div>
-              <div class="back">
-                <div class="strip"></div>
-                <div class="logo">
-                  <svg
-                    version="1.1"
-                    id="visa"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="47.834px"
-                    height="47.834px"
-                    viewBox="0 0 47.834 47.834"
-                    style="enable-background: new 0 0 47.834 47.834"
-                  >
-                    <g>
-                      <g>
-                        <path
-                          d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
+												/>
+											</g>
+										</g>
+									</svg>
+								</div>
+								<div class="number"></div>
+								<div class="card-holder">
+									<label>Card holder</label>
+									<div></div>
+								</div>
+								<div class="card-expiration-date">
+									<label>Expires</label>
+									<div></div>
+								</div>
+							</div>
+							<div class="back">
+								<div class="strip"></div>
+								<div class="logo">
+									<svg
+										version="1.1"
+										id="visa"
+										xmlns="http://www.w3.org/2000/svg"
+										xmlns:xlink="http://www.w3.org/1999/xlink"
+										x="0px"
+										y="0px"
+										width="47.834px"
+										height="47.834px"
+										viewBox="0 0 47.834 47.834"
+										style="enable-background: new 0 0 47.834 47.834"
+									>
+										<g>
+											<g>
+												<path
+													d="M44.688,16.814h-3.004c-0.933,0-1.627,0.254-2.037,1.184l-5.773,13.074h4.083c0,0,0.666-1.758,0.817-2.143
                                  c0.447,0,4.414,0.006,4.979,0.006c0.116,0.498,0.474,2.137,0.474,2.137h3.607L44.688,16.814z M39.893,26.01
                                  c0.32-0.819,1.549-3.987,1.549-3.987c-0.021,0.039,0.317-0.825,0.518-1.362l0.262,1.23c0,0,0.745,3.406,0.901,4.119H39.893z
                                  M34.146,26.404c-0.028,2.963-2.684,4.875-6.771,4.875c-1.743-0.018-3.422-0.361-4.332-0.76l0.547-3.193l0.501,0.228
@@ -197,145 +215,145 @@
                                  C7.795,20.842,4.691,18.099,0,16.962z M17.581,16.812l-6.123,14.239l-4.114,0.007L3.862,19.161
                                  c2.503,1.602,4.635,4.144,5.386,5.914l0.406,1.469l3.808-9.729L17.581,16.812L17.581,16.812z M19.153,16.8h3.89L20.61,31.066
                                  h-3.888L19.153,16.8z"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-                <div class="ccv">
-                  <label>CCV</label>
-                  <div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <form class="form" autocomplete="off" novalidate>
-            <fieldset>
-              <label for="card-number">Card Number</label>
-              <input
-                type="number"
-                id="card-number"
-                class="input-cart-number"
-                maxlength="4"
-              />
-              <input
-                type="number"
-                id="card-number-1"
-                class="input-cart-number"
-                maxlength="4"
-              />
-              <input
-                type="number"
-                id="card-number-2"
-                class="input-cart-number"
-                maxlength="4"
-              />
-              <input
-                type="number"
-                id="card-number-3"
-                class="input-cart-number"
-                maxlength="4"
-              />
-            </fieldset>
-            <fieldset>
-              <label for="card-holder">Card holder</label>
-              <input type="text" id="card-holder" />
-            </fieldset>
-            <fieldset class="fieldset-expiration">
-              <label for="card-expiration-month">Expiration date</label>
-              <div class="select">
-                <select id="card-expiration-month">
-                  <option></option>
-                  <option>01</option>
-                  <option>02</option>
-                  <option>03</option>
-                  <option>04</option>
-                  <option>05</option>
-                  <option>06</option>
-                  <option>07</option>
-                  <option>08</option>
-                  <option>09</option>
-                  <option>10</option>
-                  <option>11</option>
-                  <option>12</option>
-                </select>
-              </div>
-              <div class="select">
-                <select id="card-expiration-year">
-                  <option></option>
-                  <option>2023</option>
-                  <option>2024</option>
-                  <option>2025</option>
-                  <option>2026</option>
-                  <option>2027</option>
-                  <option>2028</option>
-                  <option>2029</option>
-                  <option>2030</option>
-                  <option></option>
-                </select>
-              </div>
-            </fieldset>
-            <fieldset class="fieldset-ccv">
-              <label for="card-ccv">CCV</label>
-              <input type="text" id="card-ccv" maxlength="3" />
-            </fieldset>
-            <button class="btn" id="submit">Confirm slot</button>
-          </form>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>
-        <h3>Let Us Help You</h3>
-        <ul>
-          <li>COVID-19 and FitIndia</li>
-          <li>Your Account</li>
-          <li>Report Center</li>
-          <li>100% Purchase Protection</li>
-          <li>FitIndia App Download</li>
-          <li>Help</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Make Money with Us</h3>
-        <ul>
-          <li>Start on FitIndia</li>
-          <li>Start under FitIndia Accelerator</li>
-          <li>Become an Affiliate</li>
-          <li>Fulfilment by FitIndia</li>
-          <li>Advertise Your Products</li>
-          <li>Help On Start with Us</li>
-        </ul>
-      </div>
-      <div>
-        <h3>About Us</h3>
-        <ul>
-          <li>FAQ</li>
-          <li>Our Investors</li>
-          <li>Newsroom</li>
-          <li>Careers</li>
-          <li>Blogs</li>
-          <li>Developers</li>
-        </ul>
-      </div>
-      <div>
-        <div>
-          <ion-icon name="logo-instagram"></ion-icon>
-          <ion-icon name="logo-twitter"></ion-icon>
-          <ion-icon name="logo-facebook"></ion-icon>
-        </div>
-        <ul>
-          <li>Gym Dashboard</li>
-          <li>Trainer Dashboard</li>
-          <li onclick="window.location.href='./classDashboard.html'">
-            Class Dashboard
-          </li>
-          <li></li>
-          <li>Admin</li>
-          <li>© ALL RIGHTS RESERVED</li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+												/>
+											</g>
+										</g>
+									</svg>
+								</div>
+								<div class="ccv">
+									<label>CCV</label>
+									<div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<form class="form" autocomplete="off" novalidate>
+						<fieldset>
+							<label for="card-number">Card Number</label>
+							<input
+								type="number"
+								id="card-number"
+								class="input-cart-number"
+								maxlength="4"
+							/>
+							<input
+								type="number"
+								id="card-number-1"
+								class="input-cart-number"
+								maxlength="4"
+							/>
+							<input
+								type="number"
+								id="card-number-2"
+								class="input-cart-number"
+								maxlength="4"
+							/>
+							<input
+								type="number"
+								id="card-number-3"
+								class="input-cart-number"
+								maxlength="4"
+							/>
+						</fieldset>
+						<fieldset>
+							<label for="card-holder">Card holder</label>
+							<input type="text" id="card-holder" />
+						</fieldset>
+						<fieldset class="fieldset-expiration">
+							<label for="card-expiration-month">Expiration date</label>
+							<div class="select">
+								<select id="card-expiration-month">
+									<option></option>
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+									<option>04</option>
+									<option>05</option>
+									<option>06</option>
+									<option>07</option>
+									<option>08</option>
+									<option>09</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+								</select>
+							</div>
+							<div class="select">
+								<select id="card-expiration-year">
+									<option></option>
+									<option>2023</option>
+									<option>2024</option>
+									<option>2025</option>
+									<option>2026</option>
+									<option>2027</option>
+									<option>2028</option>
+									<option>2029</option>
+									<option>2030</option>
+									<option></option>
+								</select>
+							</div>
+						</fieldset>
+						<fieldset class="fieldset-ccv">
+							<label for="card-ccv">CCV</label>
+							<input type="text" id="card-ccv" maxlength="3" />
+						</fieldset>
+						<button class="btn" id="submit">Confirm slot</button>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div>
+				<h3>Let Us Help You</h3>
+				<ul>
+					<li>COVID-19 and FitIndia</li>
+					<li>Your Account</li>
+					<li>Report Center</li>
+					<li>100% Purchase Protection</li>
+					<li>FitIndia App Download</li>
+					<li>Help</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Make Money with Us</h3>
+				<ul>
+					<li>Start on FitIndia</li>
+					<li>Start under FitIndia Accelerator</li>
+					<li>Become an Affiliate</li>
+					<li>Fulfilment by FitIndia</li>
+					<li>Advertise Your Products</li>
+					<li>Help On Start with Us</li>
+				</ul>
+			</div>
+			<div>
+				<h3>About Us</h3>
+				<ul>
+					<li>FAQ</li>
+					<li>Our Investors</li>
+					<li>Newsroom</li>
+					<li>Careers</li>
+					<li>Blogs</li>
+					<li>Developers</li>
+				</ul>
+			</div>
+			<div>
+				<div>
+					<ion-icon name="logo-instagram"></ion-icon>
+					<ion-icon name="logo-twitter"></ion-icon>
+					<ion-icon name="logo-facebook"></ion-icon>
+				</div>
+				<ul>
+					<li>Gym Dashboard</li>
+					<li>Trainer Dashboard</li>
+					<li onclick="window.location.href='./classDashboard.html'">
+						Class Dashboard
+					</li>
+					<li></li>
+					<li>Admin</li>
+					<li>© ALL RIGHTS RESERVED</li>
+				</ul>
+			</div>
+		</footer>
+	</body>
 </html>
 <script src="../scripts/book.js"></script>
