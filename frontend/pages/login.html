@@ -42,8 +42,8 @@
 				<p id="notifications">
 					<ion-icon name="notifications-outline"></ion-icon><span>0</span>
 				</p>
-				<p id="user">
-					<ion-icon name="person-outline"></ion-icon><span>Login</span>
+				<p id="user" onclick="window.location.href='./signup.html'">
+					<ion-icon name="person-outline"></ion-icon><span>Sign Up</span>
 				</p>
 			</h1>
 		</nav>
@@ -58,40 +58,25 @@
 					<input
 						type="password"
 						name="password"
-						placeholder="Type password"
+						placeholder="Enter password"
 						id="password"
 					/>
-
-					<input type="checkbox" id="remember" name="remember" /><span
-						style="color: #b6b6b6; font-size: 0.9em; font-size: 11px"
-					>
-						Remember Me</span
-					><a
-						href="#"
-						style="font-size: 10px; text-decoration: none; color: black"
-						;
-						>Forgot your password?</a
-					>
 
 					<input type="submit" name="signup_submit" value="login" />
 				</form>
 
-				<br />
-
 				<button class="social-signin google">Sign up with Google+</button>
 
-				<a
-					href="./signup.html"
+				<span
 					style="
-						float: right;
-						margin-right: 35px;
-						font-size: 0.9em;
-						font-size: 10px;
-						text-decoration: none;
+						width: max-content;
+						margin: auto;
+						font-size: 13px;
 						color: black;
 					"
 					;
-					>Don't have an account? Sign up!</a
+					>Don't have an account?
+					<a href="./signup.html">Sign up</a> !</span
 				>
 			</div>
 
