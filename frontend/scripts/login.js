@@ -1,21 +1,8 @@
-let user = JSON.parse(localStorage.getItem("user"));
+const host = "https://fit-india.onrender.com"
 
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const form = document.querySelector("form");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (!user) {
-    window.location.href = "../pages/signup.html";
-  } else if (user.password === password.value && user.email === email.value) {
-    localStorage.setItem("userName", user.name);
-
-    window.location.href = "../index.html";
-  } else {
-    alert("Please enter correct password");
-  }
-});
 
 const city = document.querySelector("#location>span");
 
@@ -47,7 +34,8 @@ function getLocation() {
           .then(function (data) {
             city.innerHTML = data[0].name.toUpperCase();
 
-            console.log(city.innerText);
+            localStorage.setItem("userLocation", data[0].name.toUpperCase())
+            console.log(data);
           })
           .catch(function (error) {
             console.log("Error:", error);
@@ -72,5 +60,44 @@ function getLocation() {
     );
   } else {
     console.log("Geolocation is not supported.");
+  }
+}
+
+
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  loginCheck()
+});
+
+function loginCheck() {
+  if (email.value && password.value) {
+    login();
+  } else {
+    alert("Please enter all required fields");
+  }
+}
+async function login() {
+  let user = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(user);
+
+  try {
+    const response = await fetch(`${host}/user/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+
+    const data = await response.json();
+    alert(data.message)
+    window.location.href = "../index.html";
+  } catch (error) {
+    alert("Please enter correct password");
   }
 }
