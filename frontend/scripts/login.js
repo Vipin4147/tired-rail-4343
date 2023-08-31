@@ -1,4 +1,4 @@
-const host = "https://fit-india.onrender.com"
+const host = "https://fit-india.onrender.com";
 
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -8,9 +8,9 @@ const city = document.querySelector("#location>span");
 
 let userLocation = localStorage.getItem("userLocation") || null;
 
-if(userLocation){
-  city.innerHTML = userLocation
-}else{
+if (userLocation) {
+  city.innerHTML = userLocation;
+} else {
   getLocation();
 }
 function getLocation() {
@@ -34,7 +34,7 @@ function getLocation() {
           .then(function (data) {
             city.innerHTML = data[0].name.toUpperCase();
 
-            localStorage.setItem("userLocation", data[0].name.toUpperCase())
+            localStorage.setItem("userLocation", data[0].name.toUpperCase());
             console.log(data);
           })
           .catch(function (error) {
@@ -63,12 +63,10 @@ function getLocation() {
   }
 }
 
-
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  loginCheck()
+  loginCheck();
 });
 
 function loginCheck() {
@@ -95,9 +93,24 @@ async function login() {
     });
 
     const data = await response.json();
-    alert(data.message)
+    alert(data.message);
     window.location.href = "../index.html";
   } catch (error) {
     alert("Please enter correct password");
   }
 }
+
+// reponsive navbar
+let burgur_count = 0;
+let hem_burgur = document.getElementById("hem_burgur");
+let burgur_menu = document.getElementById("burgur_menu");
+
+hem_burgur.onclick = () => {
+  if (burgur_count % 2 == 0) {
+    burgur_menu.style.display = "block";
+    burgur_count++;
+  } else {
+    burgur_menu.style.display = "none";
+    burgur_count++;
+  }
+};
