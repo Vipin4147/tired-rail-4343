@@ -284,17 +284,16 @@ button.social-signin.google {
         width: 100%;
     }
     #login-box{
-        width:100%;
+        width:90%;
         
     }
     /* .left{
         width: 200px;
         height: 450px;
-    }
-    .right{
-        width: 200px;
-        height: 450px;
     } */
+    .right{
+        display: none;
+    }
   
    }
   
@@ -341,7 +340,17 @@ button.social-signin.google {
     }
   
   #login-box{
-    width: 100%;
+    width: 80%;
+    
+    
   }
+  .right{
+    display: none;
+   
+}
+/* .left{
+    width: 60%;
+    padding-left: 100px;
+} */
    }
   
