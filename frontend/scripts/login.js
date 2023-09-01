@@ -99,7 +99,7 @@ async function login() {
 		alert(data.message);
 		console.log(data.user);
 		localStorage.setItem("userName", data.user.name);
-		// window.location.href = "../index.html";
+		window.location.href = "../index.html";
 	} catch (error) {
 		alert("Please enter correct password");
 	}
