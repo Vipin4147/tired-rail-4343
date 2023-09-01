@@ -97,9 +97,9 @@ async function login() {
 
 		const data = await response.json();
 		alert(data.message);
-		console.log(data.user.name);
-		localStorage.setItem("userName", user.name);
-		window.location.href = "../index.html";
+		console.log(data.user);
+		localStorage.setItem("userName", data.user.name);
+		// window.location.href = "../index.html";
 	} catch (error) {
 		alert("Please enter correct password");
 	}
